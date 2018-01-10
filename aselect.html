@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function populate(s1,s2,s3){
+	var s1 = document.getElementById(s1);
+	var s2 = document.getElementById(s2);
+        var s3 = document.getElementById(s3);
+	s2.innerHTML = "";
+        s3.innerHTML = "";
+        
+	if(s1.value == "Zootopia"){
+		var optionArray = ["|","monday|Monday|1pm|1PM","tuesday|Tuesday|1pm|1PM","wednesday|Wednesday","thursday|Thursday","friday|Friday","saturday|Saturday","sunday|Sunday"];
+
+               
+	} else if(s1.value == "Mustang"){
+		var optionArray = ["|","monday|Monday","tuesday|Tuesday","saturday|Saturday","sunday|Sunday"];
+                
+	} else if(s1.value == "Ki&Ka"){
+		var optionArray = ["|","monday|Monday","tuesday|Tuesday","wednesday|Wednesday","thursday|Thursday","friday|Friday","saturday|Saturday","sunday|Sunday"];
+                
+	}
+        else if(s1.value == "Grimsby"){
+		var optionArray = ["|","wednesday|Wednesday","thursday|Thursday","friday|Friday","saturday|Saturday","sunday|Sunday"];
+               
+	}
+
+	for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+		s2.options.add(newOption);
+	}
+
+	
+}
+function validateForm(s4) {
+var s4 = document.getElementById(s4);
+    var x = document.forms["TESTING"]["slct1"].value;
+  
+    if ( x=="Zootopia" && s4=="None"){
+      alert("Please select a day,time,seat");
+
+    }
+
+
+}
+
+
+</script>
+</head>
+<body>
+<form name ="TESTING">
+<h2>Choose Your Car</h2>
+<hr />
+Choose Movie:
+<select id="slct1" name="slct1" onchange="populate(this.id,'slct2','slct3')" >
+  <option value=""></option>
+  <option value="Zootopia">Zootopia</option>
+  <option value="Mustang">Mustang</option>
+  <option value="Ki&Ka">Ki&Ka</option>
+  <option value="Grimsby">Grimsby</option>
+</select>
+<hr />
+Choose Day:
+<select id="slct2" name="slct2" onchange="validateForm(this.id)">
+</select>
+<hr />
+
+<hr />
+Choose Time:
+<select id="slct3" name="slct3">
+<p id="slct3"></p>
+</select>
+<hr />
+</form>
+</body>
+</html>

@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+var days = new Array();
+
+days['Zootopia'] = new Array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
+days['Mustang'] = new Array('Monday','Tuesday','Saturday','Sunday');
+days['Ki&ka'] =   new Array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
+days['Grimsby'] = new Array('Wednesday','Thursday','Friday','Saturday','Sunday');
+
+
+var times = new Array();
+
+times['Zootopia'] = new Array();
+times['Zootopia']['Monday']          = new Array('1:PM');
+times['Zootopia']['Tuesday'] = new Array('1:PM');
+times['Zootopia']['Wednesday']          = new Array('6:PM');
+times['Zootopia']['Thursday']          = new Array('6:PM');
+times['Zootopia']['Friday'] = new Array('6:PM');
+times['Zootopia']['Saturday']          = new Array('12:PM');
+times['Zootopia']['Sunday']          = new Array('12:PM');
+
+times['Mustang'] = new Array();
+times['Mustang']['Monday']          = new Array('6:PM');
+times['Mustang']['Tuesday'] = new Array('6:PM');
+times['Mustang']['Saturday']          = new Array('3:PM');
+times['Mustang']['Sunday']          = new Array('3:PM');
+
+times['Ki&ka'] = new Array();
+times['Ki&ka']['Monday']          = new Array('9:PM');
+times['Ki&ka']['Tuesday'] = new Array('9:PM');
+times['Ki&ka']['Wednesday']          = new Array('1:PM');
+times['Ki&ka']['Thursday']          = new Array('1:PM');
+times['Ki&ka']['Friday'] = new Array('1:PM');
+times['Ki&ka']['Saturday']          = new Array('6:PM');
+times['Ki&ka']['Sunday']          = new Array('6:PM');
+
+times['Grimsby'] = new Array();
+times['Grimsby']['Wednesday']          = new Array('9:PM');
+times['Grimsby']['Thursday']          = new Array('9:PM');
+times['Grimsby']['Friday'] = new Array('9:PM');
+times['Grimsby']['Saturday']          = new Array('9:PM');
+times['Grimsby']['Sunday']          = new Array('9:PM');
+
+var seats = new Array();
+seats['Zootopia'] = new Array();
+seats['Zootopia']['Monday'] =  new Array();
+seats['Zootopia']['Monday']['1:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Zootopia']['Tuesday'] =  new Array();
+seats['Zootopia']['Tuesday']['1:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Zootopia']['Wednesday'] =  new Array();
+seats['Zootopia']['Wednesday']['6:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Zootopia']['Thursday'] =  new Array();
+seats['Zootopia']['Thursday']['6:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Zootopia']['Friday'] =  new Array();
+seats['Zootopia']['Friday']['6:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Zootopia']['Saturday'] =  new Array();
+seats['Zootopia']['Saturday']['12:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Zootopia']['Sunday'] =  new Array();
+seats['Zootopia']['Sunday']['12:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+
+seats['Mustang'] = new Array();
+seats['Mustang']['Monday'] =  new Array();
+seats['Mustang']['Monday']['6:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Mustang']['Tuesday'] =  new Array();
+seats['Mustang']['Tuesday']['6:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Mustang']['Saturday'] =  new Array();
+seats['Mustang']['Saturday']['3:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Mustang']['Sunday'] =  new Array();
+seats['Mustang']['Sunday']['3:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+
+seats['Ki&ka'] = new Array();
+seats['Ki&ka']['Monday'] =  new Array();
+seats['Ki&ka']['Monday']['9:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Ki&ka']['Tuesday'] =  new Array();
+seats['Ki&ka']['Tuesday']['9:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Ki&ka']['Wednesday'] =  new Array();
+seats['Ki&ka']['Wednesday']['1:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Ki&ka']['Thursday'] =  new Array();
+seats['Ki&ka']['Thursday']['1:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Ki&ka']['Friday'] =  new Array();
+seats['Ki&ka']['Friday']['1:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Ki&ka']['Saturday'] =  new Array();
+seats['Ki&ka']['Saturday']['6:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Ki&ka']['Sunday'] =  new Array();
+seats['Ki&ka']['Sunday']['6:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+
+seats['Grimsby'] = new Array();
+seats['Grimsby']['Wednesday'] =  new Array();
+seats['Grimsby']['Wednesday']['9:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Grimsby']['Thursday'] =  new Array();
+seats['Grimsby']['Thursday']['9:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Grimsby']['Friday'] =  new Array();
+seats['Grimsby']['Friday']['9:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Grimsby']['Saturday'] =  new Array();
+seats['Grimsby']['Saturday']['9:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+seats['Grimsby']['Sunday'] =  new Array();
+seats['Grimsby']['Sunday']['9:PM'] =  new Array('SA','SP','SC','FA','FC','BB');
+
+var stypes = new Array();
+stypes['Zootopia'] = new Array();
+stypes['Zootopia']['Monday'] =  new Array();
+stypes['Zootopia']['Monday']['1:PM'] =  new Array();
+stypes['Zootopia']['Monday']['1:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Monday']['1:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Monday']['1:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Monday']['1:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Monday']['1:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Monday']['1:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Zootopia']['Tuesday'] =  new Array();
+stypes['Zootopia']['Tuesday']['1:PM'] =  new Array();
+stypes['Zootopia']['Tuesday']['1:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Tuesday']['1:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Tuesday']['1:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Tuesday']['1:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Tuesday']['1:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Tuesday']['1:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Zootopia']['Wednesday'] =  new Array();
+stypes['Zootopia']['Wednesday']['6:PM'] =  new Array();
+stypes['Zootopia']['Wednesday']['6:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Wednesday']['6:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Wednesday']['6:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Wednesday']['6:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Wednesday']['6:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Wednesday']['6:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+
+stypes['Zootopia']['Thursday'] =  new Array();
+stypes['Zootopia']['Thursday']['6:PM'] =  new Array();
+stypes['Zootopia']['Thursday']['6:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Thursday']['6:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Thursday']['6:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Thursday']['6:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Thursday']['6:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Thursday']['6:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Zootopia']['Friday'] =  new Array();
+stypes['Zootopia']['Friday']['6:PM'] =  new Array();
+stypes['Zootopia']['Friday']['6:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Friday']['6:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Friday']['6:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Friday']['6:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Friday']['6:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Friday']['6:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Zootopia']['Saturday'] =  new Array();
+stypes['Zootopia']['Saturday']['12:PM'] =  new Array();
+stypes['Zootopia']['Saturday']['12:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Saturday']['12:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Saturday']['12:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Saturday']['12:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Saturday']['12:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Saturday']['12:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Zootopia']['Sunday'] =  new Array();
+stypes['Zootopia']['Sunday']['12:PM'] =  new Array();
+stypes['Zootopia']['Sunday']['12:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Sunday']['12:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Sunday']['12:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Sunday']['12:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Sunday']['12:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Zootopia']['Sunday']['12:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Mustang'] = new Array();
+stypes['Mustang']['Monday'] =  new Array();
+stypes['Mustang']['Monday']['6:PM'] =  new Array();
+stypes['Mustang']['Monday']['6:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Monday']['6:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Monday']['6:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Monday']['6:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Monday']['6:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Monday']['6:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Mustang']['Tuesday'] =  new Array();
+stypes['Mustang']['Tuesday']['6:PM'] =  new Array();
+stypes['Mustang']['Tuesday']['6:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Tuesday']['6:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Tuesday']['6:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Tuesday']['6:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Tuesday']['6:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Tuesday']['6:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+
+stypes['Mustang']['Saturday'] =  new Array();
+stypes['Mustang']['Saturday']['3:PM'] =  new Array();
+stypes['Mustang']['Saturday']['3:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Saturday']['3:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Saturday']['3:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Saturday']['3:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Saturday']['3:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Saturday']['3:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Mustang']['Sunday'] =  new Array();
+stypes['Mustang']['Sunday']['3:PM'] =  new Array();
+stypes['Mustang']['Sunday']['3:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Sunday']['3:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Sunday']['3:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Sunday']['3:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Sunday']['3:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Mustang']['Sunday']['3:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+
+stypes['Ki&ka'] = new Array();
+stypes['Ki&ka']['Monday'] =  new Array();
+stypes['Ki&ka']['Monday']['9:PM'] =  new Array();
+stypes['Ki&ka']['Monday']['9:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Monday']['9:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Monday']['9:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Monday']['9:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Monday']['9:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Monday']['9:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Ki&ka']['Tuesday'] =  new Array();
+stypes['Ki&ka']['Tuesday']['9:PM'] =  new Array();
+stypes['Ki&ka']['Tuesday']['9:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Tuesday']['9:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Tuesday']['9:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Tuesday']['9:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Tuesday']['9:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Tuesday']['9:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Ki&ka']['Wednesday'] =  new Array();
+stypes['Ki&ka']['Wednesday']['1:PM'] =  new Array();
+stypes['Ki&ka']['Wednesday']['1:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Wednesday']['1:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Wednesday']['1:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Wednesday']['1:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Wednesday']['1:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Wednesday']['1:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+
+stypes['Ki&ka']['Thursday'] =  new Array();
+stypes['Ki&ka']['Thursday']['1:PM'] =  new Array();
+stypes['Ki&ka']['Thursday']['1:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Thursday']['1:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Thursday']['1:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Thursday']['1:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Thursday']['1:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Thursday']['1:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Ki&ka']['Friday'] =  new Array();
+stypes['Ki&ka']['Friday']['1:PM'] =  new Array();
+stypes['Ki&ka']['Friday']['1:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Friday']['1:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Friday']['1:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Friday']['1:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Friday']['1:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Friday']['1:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Ki&ka']['Saturday'] =  new Array();
+stypes['Ki&ka']['Saturday']['6:PM'] =  new Array();
+stypes['Ki&ka']['Saturday']['6:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Saturday']['6:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Saturday']['6:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Saturday']['6:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Saturday']['6:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Saturday']['6:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Ki&ka']['Sunday'] =  new Array();
+stypes['Ki&ka']['Sunday']['6:PM'] =  new Array();
+stypes['Ki&ka']['Sunday']['6:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Sunday']['6:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Sunday']['6:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Sunday']['6:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Sunday']['6:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Ki&ka']['Sunday']['6:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+
+stypes['Grimsby'] = new Array();
+
+stypes['Grimsby']['Wednesday'] =  new Array();
+stypes['Grimsby']['Wednesday']['9:PM'] =  new Array();
+stypes['Grimsby']['Wednesday']['9:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Wednesday']['9:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Wednesday']['9:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Wednesday']['9:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Wednesday']['9:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Wednesday']['9:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+
+stypes['Grimsby']['Thursday'] =  new Array();
+stypes['Grimsby']['Thursday']['9:PM'] =  new Array();
+stypes['Grimsby']['Thursday']['9:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Thursday']['9:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Thursday']['9:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Thursday']['9:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Thursday']['9:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Thursday']['9:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Grimsby']['Friday'] =  new Array();
+stypes['Grimsby']['Friday']['9:PM'] =  new Array();
+stypes['Grimsby']['Friday']['9:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Friday']['9:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Friday']['9:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Friday']['9:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Friday']['9:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Friday']['9:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Grimsby']['Saturday'] =  new Array();
+stypes['Grimsby']['Saturday']['9:PM'] =  new Array();
+stypes['Grimsby']['Saturday']['9:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Saturday']['9:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Saturday']['9:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Saturday']['9:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Saturday']['9:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Saturday']['9:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+stypes['Grimsby']['Sunday'] =  new Array();
+stypes['Grimsby']['Sunday']['9:PM'] =  new Array();
+stypes['Grimsby']['Sunday']['9:PM']['SA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Sunday']['9:PM']['SP'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Sunday']['9:PM']['SC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Sunday']['9:PM']['FA'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Sunday']['9:PM']['FC'] =  new Array('0','1','2','3','4','5','6');
+stypes['Grimsby']['Sunday']['9:PM']['BB'] =  new Array('0','1','2','3','4','5','6');
+
+
+
+
+var prices = new Array();
+prices['Zootopia'] = new Array();
+prices['Zootopia']['Monday'] =  new Array();
+prices['Zootopia']['Monday']['1:PM'] =  new Array();
+prices['Zootopia']['Monday']['1:PM']['SA'] =  [];
+prices['Zootopia']['Monday']['1:PM']['SA'][0] =  0;
+prices['Zootopia']['Monday']['1:PM']['SA'][1] =  12;
+prices['Zootopia']['Monday']['1:PM']['SA'][2] =  24;
+prices['Zootopia']['Monday']['1:PM']['SA'][3] =  36;
+prices['Zootopia']['Monday']['1:PM']['SA'][4] =  48;
+prices['Zootopia']['Monday']['1:PM']['SA'][5] =  60;
+prices['Zootopia']['Monday']['1:PM']['SA'][6] =  72;
+prices['Zootopia']['Monday']['1:PM']['SP'] =  new Array();
+prices['Zootopia']['Monday']['1:PM']['SP'][0] =  0;
+prices['Zootopia']['Monday']['1:PM']['SP'][1] =  10;
+prices['Zootopia']['Monday']['1:PM']['SP'][2] =  20;
+prices['Zootopia']['Monday']['1:PM']['SP'][3] =  30;
+prices['Zootopia']['Monday']['1:PM']['SP'][4] =  40;
+prices['Zootopia']['Monday']['1:PM']['SP'][5] =  50;
+prices['Zootopia']['Monday']['1:PM']['SP'][6] =  60;
+prices['Zootopia']['Monday']['1:PM']['SC'] =  new Array();
+prices['Zootopia']['Monday']['1:PM']['SC'][0] =  0;
+prices['Zootopia']['Monday']['1:PM']['SC'][1] =  8;
+prices['Zootopia']['Monday']['1:PM']['SC'][2] =  16;
+prices['Zootopia']['Monday']['1:PM']['SC'][3] =  24;
+prices['Zootopia']['Monday']['1:PM']['SC'][4] =  32;
+prices['Zootopia']['Monday']['1:PM']['SC'][5] =  40;
+prices['Zootopia']['Monday']['1:PM']['SC'][6] =  48;
+prices['Zootopia']['Monday']['1:PM']['FA'] =  new Array();
+prices['Zootopia']['Monday']['1:PM']['FA'][0] =  0;
+prices['Zootopia']['Monday']['1:PM']['FA'][1] =  25;
+prices['Zootopia']['Monday']['1:PM']['FA'][2] =  50;
+prices['Zootopia']['Monday']['1:PM']['FA'][3] =  75;
+prices['Zootopia']['Monday']['1:PM']['FA'][4] =  100;
+prices['Zootopia']['Monday']['1:PM']['FA'][5] =  125;
+prices['Zootopia']['Monday']['1:PM']['FA'][6] =  150;
+prices['Zootopia']['Monday']['1:PM']['FC'] =  new Array();
+prices['Zootopia']['Monday']['1:PM']['FC'][0] =  0;
+prices['Zootopia']['Monday']['1:PM']['FC'][1] =  20;
+prices['Zootopia']['Monday']['1:PM']['FC'][2] =  40;
+prices['Zootopia']['Monday']['1:PM']['FC'][3] =  60;
+prices['Zootopia']['Monday']['1:PM']['FC'][4] =  80;
+prices['Zootopia']['Monday']['1:PM']['FC'][5] =  100;
+prices['Zootopia']['Monday']['1:PM']['FC'][6] =  120;
+prices['Zootopia']['Monday']['1:PM']['BB'] =  new Array();
+prices['Zootopia']['Monday']['1:PM']['BB'][0] =  0;
+prices['Zootopia']['Monday']['1:PM']['BB'][1] =  20;
+prices['Zootopia']['Monday']['1:PM']['BB'][2] =  40;
+prices['Zootopia']['Monday']['1:PM']['BB'][3] =  60;
+prices['Zootopia']['Monday']['1:PM']['BB'][4] =  80;
+prices['Zootopia']['Monday']['1:PM']['BB'][5] =  100;
+prices['Zootopia']['Monday']['1:PM']['BB'][6] =  120;
+
+prices['Zootopia']['Tuesday'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM']['SA'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM']['SA'][0] =  0;
+prices['Zootopia']['Tuesday']['1:PM']['SA'][1] =  12;
+prices['Zootopia']['Tuesday']['1:PM']['SA'][2] =  24;
+prices['Zootopia']['Tuesday']['1:PM']['SA'][3] =  36;
+prices['Zootopia']['Tuesday']['1:PM']['SA'][4] =  48;
+prices['Zootopia']['Tuesday']['1:PM']['SA'][5] =  60;
+prices['Zootopia']['Tuesday']['1:PM']['SA'][6] =  72;
+prices['Zootopia']['Tuesday']['1:PM']['SP'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM']['SP'][0] =  0;
+prices['Zootopia']['Tuesday']['1:PM']['SP'][1] =  10;
+prices['Zootopia']['Tuesday']['1:PM']['SP'][2] =  20;
+prices['Zootopia']['Tuesday']['1:PM']['SP'][3] =  30;
+prices['Zootopia']['Tuesday']['1:PM']['SP'][4] =  40;
+prices['Zootopia']['Tuesday']['1:PM']['SP'][5] =  50;
+prices['Zootopia']['Tuesday']['1:PM']['SP'][6] =  60;
+prices['Zootopia']['Tuesday']['1:PM']['SC'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM']['SC'][0] =  0;
+prices['Zootopia']['Tuesday']['1:PM']['SC'][1] =  8;
+prices['Zootopia']['Tuesday']['1:PM']['SC'][2] =  16;
+prices['Zootopia']['Tuesday']['1:PM']['SC'][3] =  24;
+prices['Zootopia']['Tuesday']['1:PM']['SC'][4] =  32;
+prices['Zootopia']['Tuesday']['1:PM']['SC'][5] =  40;
+prices['Zootopia']['Tuesday']['1:PM']['SC'][6] =  48;
+prices['Zootopia']['Tuesday']['1:PM']['FA'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM']['FA'][0] =  0;
+prices['Zootopia']['Tuesday']['1:PM']['FA'][1] =  25;
+prices['Zootopia']['Tuesday']['1:PM']['FA'][2] =  50;
+prices['Zootopia']['Tuesday']['1:PM']['FA'][3] =  75;
+prices['Zootopia']['Tuesday']['1:PM']['FA'][4] =  100;
+prices['Zootopia']['Tuesday']['1:PM']['FA'][5] =  125;
+prices['Zootopia']['Tuesday']['1:PM']['FA'][6] =  150;
+prices['Zootopia']['Tuesday']['1:PM']['FC'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM']['FC'][0] =  0;
+prices['Zootopia']['Tuesday']['1:PM']['FC'][1] =  20;
+prices['Zootopia']['Tuesday']['1:PM']['FC'][2] =  40;
+prices['Zootopia']['Tuesday']['1:PM']['FC'][3] =  60;
+prices['Zootopia']['Tuesday']['1:PM']['FC'][4] =  80;
+prices['Zootopia']['Tuesday']['1:PM']['FC'][5] =  100;
+prices['Zootopia']['Tuesday']['1:PM']['FC'][6] =  120;
+prices['Zootopia']['Tuesday']['1:PM']['BB'] =  new Array();
+prices['Zootopia']['Tuesday']['1:PM']['BB'][0] =  0;
+prices['Zootopia']['Tuesday']['1:PM']['BB'][1] =  20;
+prices['Zootopia']['Tuesday']['1:PM']['BB'][2] =  40;
+prices['Zootopia']['Tuesday']['1:PM']['BB'][3] =  60;
+prices['Zootopia']['Tuesday']['1:PM']['BB'][4] =  80;
+prices['Zootopia']['Tuesday']['1:PM']['BB'][5] =  100;
+prices['Zootopia']['Tuesday']['1:PM']['BB'][6] =  120;
+
+prices['Zootopia']['Wednesday'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM']['SA'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM']['SA'][0] =  0;
+prices['Zootopia']['Wednesday']['6:PM']['SA'][1] =  18;
+prices['Zootopia']['Wednesday']['6:PM']['SA'][2] =  36;
+prices['Zootopia']['Wednesday']['6:PM']['SA'][3] =  54;
+prices['Zootopia']['Wednesday']['6:PM']['SA'][4] =  72;
+prices['Zootopia']['Wednesday']['6:PM']['SA'][5] =  90;
+prices['Zootopia']['Wednesday']['6:PM']['SA'][6] =  108;
+prices['Zootopia']['Wednesday']['6:PM']['SP'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM']['SP'][0] =  0;
+prices['Zootopia']['Wednesday']['6:PM']['SP'][1] =  15;
+prices['Zootopia']['Wednesday']['6:PM']['SP'][2] =  30;
+prices['Zootopia']['Wednesday']['6:PM']['SP'][3] =  45;
+prices['Zootopia']['Wednesday']['6:PM']['SP'][4] =  60;
+prices['Zootopia']['Wednesday']['6:PM']['SP'][5] =  75;
+prices['Zootopia']['Wednesday']['6:PM']['SP'][6] =  90;
+prices['Zootopia']['Wednesday']['6:PM']['SC'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM']['SC'][0] =  0;
+prices['Zootopia']['Wednesday']['6:PM']['SC'][1] =  12;
+prices['Zootopia']['Wednesday']['6:PM']['SC'][2] =  24;
+prices['Zootopia']['Wednesday']['6:PM']['SC'][3] =  36;
+prices['Zootopia']['Wednesday']['6:PM']['SC'][4] =  48;
+prices['Zootopia']['Wednesday']['6:PM']['SC'][5] =  60;
+prices['Zootopia']['Wednesday']['6:PM']['SC'][6] =  72;
+prices['Zootopia']['Wednesday']['6:PM']['FA'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM']['FA'][0] =  0;
+prices['Zootopia']['Wednesday']['6:PM']['FA'][1] =  30;
+prices['Zootopia']['Wednesday']['6:PM']['FA'][2] =  60;
+prices['Zootopia']['Wednesday']['6:PM']['FA'][3] =  90;
+prices['Zootopia']['Wednesday']['6:PM']['FA'][4] =  120;
+prices['Zootopia']['Wednesday']['6:PM']['FA'][5] =  150;
+prices['Zootopia']['Wednesday']['6:PM']['FA'][6] =  180;
+prices['Zootopia']['Wednesday']['6:PM']['FC'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM']['FC'][0] =  0;
+prices['Zootopia']['Wednesday']['6:PM']['FC'][1] =  25;
+prices['Zootopia']['Wednesday']['6:PM']['FC'][2] =  50;
+prices['Zootopia']['Wednesday']['6:PM']['FC'][3] =  75;
+prices['Zootopia']['Wednesday']['6:PM']['FC'][4] =  100;
+prices['Zootopia']['Wednesday']['6:PM']['FC'][5] =  125;
+prices['Zootopia']['Wednesday']['6:PM']['FC'][6] =  150;
+prices['Zootopia']['Wednesday']['6:PM']['BB'] =  new Array();
+prices['Zootopia']['Wednesday']['6:PM']['BB'][0] =  0;
+prices['Zootopia']['Wednesday']['6:PM']['BB'][1] =  30;
+prices['Zootopia']['Wednesday']['6:PM']['BB'][2] =  60;
+prices['Zootopia']['Wednesday']['6:PM']['BB'][3] =  90;
+prices['Zootopia']['Wednesday']['6:PM']['BB'][4] =  120;
+prices['Zootopia']['Wednesday']['6:PM']['BB'][5] =  150;
+prices['Zootopia']['Wednesday']['6:PM']['BB'][6] =  180;
+prices['Zootopia']['Thursday'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM']['SA'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM']['SA'][0] =  0;
+prices['Zootopia']['Thursday']['6:PM']['SA'][1] =  18;
+prices['Zootopia']['Thursday']['6:PM']['SA'][2] =  36;
+prices['Zootopia']['Thursday']['6:PM']['SA'][3] =  54;
+prices['Zootopia']['Thursday']['6:PM']['SA'][4] =  72;
+prices['Zootopia']['Thursday']['6:PM']['SA'][5] =  90;
+prices['Zootopia']['Thursday']['6:PM']['SA'][6] =  108;
+prices['Zootopia']['Thursday']['6:PM']['SP'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM']['SP'][0] =  0;
+prices['Zootopia']['Thursday']['6:PM']['SP'][1] =  15;
+prices['Zootopia']['Thursday']['6:PM']['SP'][2] =  30;
+prices['Zootopia']['Thursday']['6:PM']['SP'][3] =  45;
+prices['Zootopia']['Thursday']['6:PM']['SP'][4] =  60;
+prices['Zootopia']['Thursday']['6:PM']['SP'][5] =  75;
+prices['Zootopia']['Thursday']['6:PM']['SP'][6] =  90;
+prices['Zootopia']['Thursday']['6:PM']['SC'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM']['SC'][0] =  0;
+prices['Zootopia']['Thursday']['6:PM']['SC'][1] =  12;
+prices['Zootopia']['Thursday']['6:PM']['SC'][2] =  24;
+prices['Zootopia']['Thursday']['6:PM']['SC'][3] =  36;
+prices['Zootopia']['Thursday']['6:PM']['SC'][4] =  48;
+prices['Zootopia']['Thursday']['6:PM']['SC'][5] =  60;
+prices['Zootopia']['Thursday']['6:PM']['SC'][6] =  72;
+prices['Zootopia']['Thursday']['6:PM']['FA'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM']['FA'][0] =  0;
+prices['Zootopia']['Thursday']['6:PM']['FA'][1] =  30;
+prices['Zootopia']['Thursday']['6:PM']['FA'][2] =  60;
+prices['Zootopia']['Thursday']['6:PM']['FA'][3] =  90;
+prices['Zootopia']['Thursday']['6:PM']['FA'][4] =  120;
+prices['Zootopia']['Thursday']['6:PM']['FA'][5] =  150;
+prices['Zootopia']['Thursday']['6:PM']['FA'][6] =  180;
+prices['Zootopia']['Thursday']['6:PM']['FC'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM']['FC'][0] =  0;
+prices['Zootopia']['Thursday']['6:PM']['FC'][1] =  25;
+prices['Zootopia']['Thursday']['6:PM']['FC'][2] =  50;
+prices['Zootopia']['Thursday']['6:PM']['FC'][3] =  75;
+prices['Zootopia']['Thursday']['6:PM']['FC'][4] =  100;
+prices['Zootopia']['Thursday']['6:PM']['FC'][5] =  125;
+prices['Zootopia']['Thursday']['6:PM']['FC'][6] =  150;
+prices['Zootopia']['Thursday']['6:PM']['BB'] =  new Array();
+prices['Zootopia']['Thursday']['6:PM']['BB'][0] =  0;
+prices['Zootopia']['Thursday']['6:PM']['BB'][1] =  30;
+prices['Zootopia']['Thursday']['6:PM']['BB'][2] =  60;
+prices['Zootopia']['Thursday']['6:PM']['BB'][3] =  90;
+prices['Zootopia']['Thursday']['6:PM']['BB'][4] =  120;
+prices['Zootopia']['Thursday']['6:PM']['BB'][5] =  150;
+prices['Zootopia']['Thursday']['6:PM']['BB'][6] =  180;
+prices['Zootopia']['Friday'] =  new Array();
+prices['Zootopia']['Friday']['6:PM'] =  new Array();
+prices['Zootopia']['Friday']['6:PM']['SA'] =  new Array();
+prices['Zootopia']['Friday']['6:PM']['SA'][0] =  0;
+prices['Zootopia']['Friday']['6:PM']['SA'][1] =  18;
+prices['Zootopia']['Friday']['6:PM']['SA'][2] =  36;
+prices['Zootopia']['Friday']['6:PM']['SA'][3] =  54;
+prices['Zootopia']['Friday']['6:PM']['SA'][4] =  72;
+prices['Zootopia']['Friday']['6:PM']['SA'][5] =  90;
+prices['Zootopia']['Friday']['6:PM']['SA'][6] =  108;
+prices['Zootopia']['Friday']['6:PM']['SP'] =  new Array();
+prices['Zootopia']['Friday']['6:PM']['SP'][0] =  0;
+prices['Zootopia']['Friday']['6:PM']['SP'][1] =  15;
+prices['Zootopia']['Friday']['6:PM']['SP'][2] =  30;
+prices['Zootopia']['Friday']['6:PM']['SP'][3] =  45;
+prices['Zootopia']['Friday']['6:PM']['SP'][4] =  60;
+prices['Zootopia']['Friday']['6:PM']['SP'][5] =  75;
+prices['Zootopia']['Friday']['6:PM']['SP'][6] =  90;
+prices['Zootopia']['Friday']['6:PM']['SC'] =  new Array();
+prices['Zootopia']['Friday']['6:PM']['SC'][0] =  0;
+prices['Zootopia']['Friday']['6:PM']['SC'][1] =  12;
+prices['Zootopia']['Friday']['6:PM']['SC'][2] =  24;
+prices['Zootopia']['Friday']['6:PM']['SC'][3] =  36;
+prices['Zootopia']['Friday']['6:PM']['SC'][4] =  48;
+prices['Zootopia']['Friday']['6:PM']['SC'][5] =  60;
+prices['Zootopia']['Friday']['6:PM']['SC'][6] =  72;
+prices['Zootopia']['Friday']['6:PM']['FA'] =  new Array();
+prices['Zootopia']['Friday']['6:PM']['FA'][0] =  0;
+prices['Zootopia']['Friday']['6:PM']['FA'][1] =  30;
+prices['Zootopia']['Friday']['6:PM']['FA'][2] =  60;
+prices['Zootopia']['Friday']['6:PM']['FA'][3] =  90;
+prices['Zootopia']['Friday']['6:PM']['FA'][4] =  120;
+prices['Zootopia']['Friday']['6:PM']['FA'][5] =  150;
+prices['Zootopia']['Friday']['6:PM']['FA'][6] =  180;
+prices['Zootopia']['Friday']['6:PM']['FC'] =  new Array();
+prices['Zootopia']['Friday']['6:PM']['FC'][0] =  0;
+prices['Zootopia']['Friday']['6:PM']['FC'][1] =  25;
+prices['Zootopia']['Friday']['6:PM']['FC'][2] =  50;
+prices['Zootopia']['Friday']['6:PM']['FC'][3] =  75;
+prices['Zootopia']['Friday']['6:PM']['FC'][4] =  100;
+prices['Zootopia']['Friday']['6:PM']['FC'][5] =  125;
+prices['Zootopia']['Friday']['6:PM']['FC'][6] =  150;
+prices['Zootopia']['Friday']['6:PM']['BB'] =  new Array();
+prices['Zootopia']['Friday']['6:PM']['BB'][0] =  0;
+prices['Zootopia']['Friday']['6:PM']['BB'][1] =  30;
+prices['Zootopia']['Friday']['6:PM']['BB'][2] =  60;
+prices['Zootopia']['Friday']['6:PM']['BB'][3] =  90;
+prices['Zootopia']['Friday']['6:PM']['BB'][4] =  120;
+prices['Zootopia']['Friday']['6:PM']['BB'][5] =  150;
+prices['Zootopia']['Friday']['6:PM']['BB'][6] =  180;
+prices['Zootopia']['Saturday'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM']['SA'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM']['SA'][0] =  0;
+prices['Zootopia']['Saturday']['12:PM']['SA'][1] =  18;
+prices['Zootopia']['Saturday']['12:PM']['SA'][2] =  36;
+prices['Zootopia']['Saturday']['12:PM']['SA'][3] =  54;
+prices['Zootopia']['Saturday']['12:PM']['SA'][4] =  72;
+prices['Zootopia']['Saturday']['12:PM']['SA'][5] =  90;
+prices['Zootopia']['Saturday']['12:PM']['SA'][6] =  108;
+prices['Zootopia']['Saturday']['12:PM']['SP'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM']['SP'][0] =  0;
+prices['Zootopia']['Saturday']['12:PM']['SP'][1] =  15;
+prices['Zootopia']['Saturday']['12:PM']['SP'][2] =  30;
+prices['Zootopia']['Saturday']['12:PM']['SP'][3] =  45;
+prices['Zootopia']['Saturday']['12:PM']['SP'][4] =  60;
+prices['Zootopia']['Saturday']['12:PM']['SP'][5] =  75;
+prices['Zootopia']['Saturday']['12:PM']['SP'][6] =  90;
+prices['Zootopia']['Saturday']['12:PM']['SC'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM']['SC'][0] =  0;
+prices['Zootopia']['Saturday']['12:PM']['SC'][1] =  12;
+prices['Zootopia']['Saturday']['12:PM']['SC'][2] =  24;
+prices['Zootopia']['Saturday']['12:PM']['SC'][3] =  36;
+prices['Zootopia']['Saturday']['12:PM']['SC'][4] =  48;
+prices['Zootopia']['Saturday']['12:PM']['SC'][5] =  60;
+prices['Zootopia']['Saturday']['12:PM']['SC'][6] =  72;
+prices['Zootopia']['Saturday']['12:PM']['FA'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM']['FA'][0] =  0;
+prices['Zootopia']['Saturday']['12:PM']['FA'][1] =  30;
+prices['Zootopia']['Saturday']['12:PM']['FA'][2] =  60;
+prices['Zootopia']['Saturday']['12:PM']['FA'][3] =  90;
+prices['Zootopia']['Saturday']['12:PM']['FA'][4] =  120;
+prices['Zootopia']['Saturday']['12:PM']['FA'][5] =  150;
+prices['Zootopia']['Saturday']['12:PM']['FA'][6] =  180;
+prices['Zootopia']['Saturday']['12:PM']['FC'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM']['FC'][0] =  0;
+prices['Zootopia']['Saturday']['12:PM']['FC'][1] =  25;
+prices['Zootopia']['Saturday']['12:PM']['FC'][2] =  50;
+prices['Zootopia']['Saturday']['12:PM']['FC'][3] =  75;
+prices['Zootopia']['Saturday']['12:PM']['FC'][4] =  100;
+prices['Zootopia']['Saturday']['12:PM']['FC'][5] =  125;
+prices['Zootopia']['Saturday']['12:PM']['FC'][6] =  150;
+prices['Zootopia']['Saturday']['12:PM']['BB'] =  new Array();
+prices['Zootopia']['Saturday']['12:PM']['BB'][0] =  0;
+prices['Zootopia']['Saturday']['12:PM']['BB'][1] =  30;
+prices['Zootopia']['Saturday']['12:PM']['BB'][2] =  60;
+prices['Zootopia']['Saturday']['12:PM']['BB'][3] =  90;
+prices['Zootopia']['Saturday']['12:PM']['BB'][4] =  120;
+prices['Zootopia']['Saturday']['12:PM']['BB'][5] =  150;
+prices['Zootopia']['Saturday']['12:PM']['BB'][6] =  180;
+prices['Zootopia']['Sunday'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM']['SA'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM']['SA'][0] =  0;
+prices['Zootopia']['Sunday']['12:PM']['SA'][1] =  18;
+prices['Zootopia']['Sunday']['12:PM']['SA'][2] =  36;
+prices['Zootopia']['Sunday']['12:PM']['SA'][3] =  54;
+prices['Zootopia']['Sunday']['12:PM']['SA'][4] =  72;
+prices['Zootopia']['Sunday']['12:PM']['SA'][5] =  90;
+prices['Zootopia']['Sunday']['12:PM']['SA'][6] =  108;
+prices['Zootopia']['Sunday']['12:PM']['SP'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM']['SP'][0] =  0;
+prices['Zootopia']['Sunday']['12:PM']['SP'][1] =  15;
+prices['Zootopia']['Sunday']['12:PM']['SP'][2] =  30;
+prices['Zootopia']['Sunday']['12:PM']['SP'][3] =  45;
+prices['Zootopia']['Sunday']['12:PM']['SP'][4] =  60;
+prices['Zootopia']['Sunday']['12:PM']['SP'][5] =  75;
+prices['Zootopia']['Sunday']['12:PM']['SP'][6] =  90;
+prices['Zootopia']['Sunday']['12:PM']['SC'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM']['SC'][0] =  0;
+prices['Zootopia']['Sunday']['12:PM']['SC'][1] =  12;
+prices['Zootopia']['Sunday']['12:PM']['SC'][2] =  24;
+prices['Zootopia']['Sunday']['12:PM']['SC'][3] =  36;
+prices['Zootopia']['Sunday']['12:PM']['SC'][4] =  48;
+prices['Zootopia']['Sunday']['12:PM']['SC'][5] =  60;
+prices['Zootopia']['Sunday']['12:PM']['SC'][6] =  72;
+prices['Zootopia']['Sunday']['12:PM']['FA'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM']['FA'][0] =  0;
+prices['Zootopia']['Sunday']['12:PM']['FA'][1] =  30;
+prices['Zootopia']['Sunday']['12:PM']['FA'][2] =  60;
+prices['Zootopia']['Sunday']['12:PM']['FA'][3] =  90;
+prices['Zootopia']['Sunday']['12:PM']['FA'][4] =  120;
+prices['Zootopia']['Sunday']['12:PM']['FA'][5] =  150;
+prices['Zootopia']['Sunday']['12:PM']['FA'][6] =  180;
+prices['Zootopia']['Sunday']['12:PM']['FC'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM']['FC'][0] =  0;
+prices['Zootopia']['Sunday']['12:PM']['FC'][1] =  25;
+prices['Zootopia']['Sunday']['12:PM']['FC'][2] =  50;
+prices['Zootopia']['Sunday']['12:PM']['FC'][3] =  75;
+prices['Zootopia']['Sunday']['12:PM']['FC'][4] =  100;
+prices['Zootopia']['Sunday']['12:PM']['FC'][5] =  125;
+prices['Zootopia']['Sunday']['12:PM']['FC'][6] =  150;
+prices['Zootopia']['Sunday']['12:PM']['BB'] =  new Array();
+prices['Zootopia']['Sunday']['12:PM']['BB'][0] =  0;
+prices['Zootopia']['Sunday']['12:PM']['BB'][1] =  30;
+prices['Zootopia']['Sunday']['12:PM']['BB'][2] =  60;
+prices['Zootopia']['Sunday']['12:PM']['BB'][3] =  90;
+prices['Zootopia']['Sunday']['12:PM']['BB'][4] =  120;
+prices['Zootopia']['Sunday']['12:PM']['BB'][5] =  150;
+prices['Zootopia']['Sunday']['12:PM']['BB'][6] =  180;
+
+prices['Mustang'] = new Array();
+prices['Mustang']['Monday'] =  new Array();
+prices['Mustang']['Monday']['6:PM'] =  new Array();
+prices['Mustang']['Monday']['6:PM']['SA'] =  new Array();
+prices['Mustang']['Monday']['6:PM']['SA'][0] =  0;
+prices['Mustang']['Monday']['6:PM']['SA'][1] =  12;
+prices['Mustang']['Monday']['6:PM']['SA'][2] =  24;
+prices['Mustang']['Monday']['6:PM']['SA'][3] =  36;
+prices['Mustang']['Monday']['6:PM']['SA'][4] =  48;
+prices['Mustang']['Monday']['6:PM']['SA'][5] =  60;
+prices['Mustang']['Monday']['6:PM']['SA'][6] =  72;
+prices['Mustang']['Monday']['6:PM']['SP'] =  new Array();
+prices['Mustang']['Monday']['6:PM']['SP'][0] =  0;
+prices['Mustang']['Monday']['6:PM']['SP'][1] =  10;
+prices['Mustang']['Monday']['6:PM']['SP'][2] =  20;
+prices['Mustang']['Monday']['6:PM']['SP'][3] =  30;
+prices['Mustang']['Monday']['6:PM']['SP'][4] =  40;
+prices['Mustang']['Monday']['6:PM']['SP'][5] =  50;
+prices['Mustang']['Monday']['6:PM']['SP'][6] =  60;
+prices['Mustang']['Monday']['6:PM']['SC'] =  new Array();
+prices['Mustang']['Monday']['6:PM']['SC'][0] =  0;
+prices['Mustang']['Monday']['6:PM']['SC'][1] =  8;
+prices['Mustang']['Monday']['6:PM']['SC'][2] =  16;
+prices['Mustang']['Monday']['6:PM']['SC'][3] =  24;
+prices['Mustang']['Monday']['6:PM']['SC'][4] =  32;
+prices['Mustang']['Monday']['6:PM']['SC'][5] =  40;
+prices['Mustang']['Monday']['6:PM']['SC'][6] =  48;
+prices['Mustang']['Monday']['6:PM']['FA'] =  new Array();
+prices['Mustang']['Monday']['6:PM']['FA'][0] =  0;
+prices['Mustang']['Monday']['6:PM']['FA'][1] =  25;
+prices['Mustang']['Monday']['6:PM']['FA'][2] =  50;
+prices['Mustang']['Monday']['6:PM']['FA'][3] =  75;
+prices['Mustang']['Monday']['6:PM']['FA'][4] =  100;
+prices['Mustang']['Monday']['6:PM']['FA'][5] =  125;
+prices['Mustang']['Monday']['6:PM']['FA'][6] =  150;
+prices['Mustang']['Monday']['6:PM']['FC'] =  new Array();
+prices['Mustang']['Monday']['6:PM']['FC'][0] =  0;
+prices['Mustang']['Monday']['6:PM']['FC'][1] =  20;
+prices['Mustang']['Monday']['6:PM']['FC'][2] =  40;
+prices['Mustang']['Monday']['6:PM']['FC'][3] =  60;
+prices['Mustang']['Monday']['6:PM']['FC'][4] =  80;
+prices['Mustang']['Monday']['6:PM']['FC'][5] =  100;
+prices['Mustang']['Monday']['6:PM']['FC'][6] =  120;
+prices['Mustang']['Monday']['6:PM']['BB'] =  new Array();
+prices['Mustang']['Monday']['6:PM']['BB'][0] =  0;
+prices['Mustang']['Monday']['6:PM']['BB'][1] =  20;
+prices['Mustang']['Monday']['6:PM']['BB'][2] =  40;
+prices['Mustang']['Monday']['6:PM']['BB'][3] =  60;
+prices['Mustang']['Monday']['6:PM']['BB'][4] =  80;
+prices['Mustang']['Monday']['6:PM']['BB'][5] =  100;
+prices['Mustang']['Monday']['6:PM']['BB'][6] =  120;
+
+prices['Mustang']['Tuesday'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM']['SA'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM']['SA'][0] =  0;
+prices['Mustang']['Tuesday']['6:PM']['SA'][1] =  12;
+prices['Mustang']['Tuesday']['6:PM']['SA'][2] =  24;
+prices['Mustang']['Tuesday']['6:PM']['SA'][3] =  36;
+prices['Mustang']['Tuesday']['6:PM']['SA'][4] =  48;
+prices['Mustang']['Tuesday']['6:PM']['SA'][5] =  60;
+prices['Mustang']['Tuesday']['6:PM']['SA'][6] =  72;
+prices['Mustang']['Tuesday']['6:PM']['SP'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM']['SP'][0] =  0;
+prices['Mustang']['Tuesday']['6:PM']['SP'][1] =  10;
+prices['Mustang']['Tuesday']['6:PM']['SP'][2] =  20;
+prices['Mustang']['Tuesday']['6:PM']['SP'][3] =  30;
+prices['Mustang']['Tuesday']['6:PM']['SP'][4] =  40;
+prices['Mustang']['Tuesday']['6:PM']['SP'][5] =  50;
+prices['Mustang']['Tuesday']['6:PM']['SP'][6] =  60;
+prices['Mustang']['Tuesday']['6:PM']['SC'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM']['SC'][0] =  0;
+prices['Mustang']['Tuesday']['6:PM']['SC'][1] =  8;
+prices['Mustang']['Tuesday']['6:PM']['SC'][2] =  16;
+prices['Mustang']['Tuesday']['6:PM']['SC'][3] =  24;
+prices['Mustang']['Tuesday']['6:PM']['SC'][4] =  32;
+prices['Mustang']['Tuesday']['6:PM']['SC'][5] =  40;
+prices['Mustang']['Tuesday']['6:PM']['SC'][6] =  48;
+prices['Mustang']['Tuesday']['6:PM']['FA'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM']['FA'][0] =  0;
+prices['Mustang']['Tuesday']['6:PM']['FA'][1] =  25;
+prices['Mustang']['Tuesday']['6:PM']['FA'][2] =  50;
+prices['Mustang']['Tuesday']['6:PM']['FA'][3] =  75;
+prices['Mustang']['Tuesday']['6:PM']['FA'][4] =  100;
+prices['Mustang']['Tuesday']['6:PM']['FA'][5] =  125;
+prices['Mustang']['Tuesday']['6:PM']['FA'][6] =  150;
+prices['Mustang']['Tuesday']['6:PM']['FC'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM']['FC'][0] =  0;
+prices['Mustang']['Tuesday']['6:PM']['FC'][1] =  20;
+prices['Mustang']['Tuesday']['6:PM']['FC'][2] =  40;
+prices['Mustang']['Tuesday']['6:PM']['FC'][3] =  60;
+prices['Mustang']['Tuesday']['6:PM']['FC'][4] =  80;
+prices['Mustang']['Tuesday']['6:PM']['FC'][5] =  100;
+prices['Mustang']['Tuesday']['6:PM']['FC'][6] =  120;
+prices['Mustang']['Tuesday']['6:PM']['BB'] =  new Array();
+prices['Mustang']['Tuesday']['6:PM']['BB'][0] =  0;
+prices['Mustang']['Tuesday']['6:PM']['BB'][1] =  20;
+prices['Mustang']['Tuesday']['6:PM']['BB'][2] =  40;
+prices['Mustang']['Tuesday']['6:PM']['BB'][3] =  60;
+prices['Mustang']['Tuesday']['6:PM']['BB'][4] =  80;
+prices['Mustang']['Tuesday']['6:PM']['BB'][5] =  100;
+prices['Mustang']['Tuesday']['6:PM']['BB'][6] =  120;
+
+prices['Mustang']['Saturday'] =  new Array();
+prices['Mustang']['Saturday']['3:PM'] =  new Array();
+prices['Mustang']['Saturday']['3:PM']['SA'] =  new Array();
+prices['Mustang']['Saturday']['3:PM']['SA'][0] =  0;
+prices['Mustang']['Saturday']['3:PM']['SA'][1] =  18;
+prices['Mustang']['Saturday']['3:PM']['SA'][2] =  36;
+prices['Mustang']['Saturday']['3:PM']['SA'][3] =  54;
+prices['Mustang']['Saturday']['3:PM']['SA'][4] =  72;
+prices['Mustang']['Saturday']['3:PM']['SA'][5] =  90;
+prices['Mustang']['Saturday']['3:PM']['SA'][6] =  108;
+prices['Mustang']['Saturday']['3:PM']['SP'] =  new Array();
+prices['Mustang']['Saturday']['3:PM']['SP'][0] =  0;
+prices['Mustang']['Saturday']['3:PM']['SP'][1] =  15;
+prices['Mustang']['Saturday']['3:PM']['SP'][2] =  30;
+prices['Mustang']['Saturday']['3:PM']['SP'][3] =  45;
+prices['Mustang']['Saturday']['3:PM']['SP'][4] =  60;
+prices['Mustang']['Saturday']['3:PM']['SP'][5] =  75;
+prices['Mustang']['Saturday']['3:PM']['SP'][6] =  90;
+prices['Mustang']['Saturday']['3:PM']['SC'] =  new Array();
+prices['Mustang']['Saturday']['3:PM']['SC'][0] =  0;
+prices['Mustang']['Saturday']['3:PM']['SC'][1] =  12;
+prices['Mustang']['Saturday']['3:PM']['SC'][2] =  24;
+prices['Mustang']['Saturday']['3:PM']['SC'][3] =  36;
+prices['Mustang']['Saturday']['3:PM']['SC'][4] =  48;
+prices['Mustang']['Saturday']['3:PM']['SC'][5] =  60;
+prices['Mustang']['Saturday']['3:PM']['SC'][6] =  72;
+prices['Mustang']['Saturday']['3:PM']['FA'] =  new Array();
+prices['Mustang']['Saturday']['3:PM']['FA'][0] =  0;
+prices['Mustang']['Saturday']['3:PM']['FA'][1] =  30;
+prices['Mustang']['Saturday']['3:PM']['FA'][2] =  60;
+prices['Mustang']['Saturday']['3:PM']['FA'][3] =  90;
+prices['Mustang']['Saturday']['3:PM']['FA'][4] =  120;
+prices['Mustang']['Saturday']['3:PM']['FA'][5] =  150;
+prices['Mustang']['Saturday']['3:PM']['FA'][6] =  180;
+prices['Mustang']['Saturday']['3:PM']['FC'] =  new Array();
+prices['Mustang']['Saturday']['3:PM']['FC'][0] =  0;
+prices['Mustang']['Saturday']['3:PM']['FC'][1] =  25;
+prices['Mustang']['Saturday']['3:PM']['FC'][2] =  50;
+prices['Mustang']['Saturday']['3:PM']['FC'][3] =  75;
+prices['Mustang']['Saturday']['3:PM']['FC'][4] =  100;
+prices['Mustang']['Saturday']['3:PM']['FC'][5] =  125;
+prices['Mustang']['Saturday']['3:PM']['FC'][6] =  150;
+prices['Mustang']['Saturday']['3:PM']['BB'] =  new Array();
+prices['Mustang']['Saturday']['3:PM']['BB'][0] =  0;
+prices['Mustang']['Saturday']['3:PM']['BB'][1] =  30;
+prices['Mustang']['Saturday']['3:PM']['BB'][2] =  60;
+prices['Mustang']['Saturday']['3:PM']['BB'][3] =  90;
+prices['Mustang']['Saturday']['3:PM']['BB'][4] =  120;
+prices['Mustang']['Saturday']['3:PM']['BB'][5] =  150;
+prices['Mustang']['Saturday']['3:PM']['BB'][6] =  180;
+prices['Mustang']['Sunday'] =  new Array();
+prices['Mustang']['Sunday']['3:PM'] =  new Array();
+prices['Mustang']['Sunday']['3:PM']['SA'] =  new Array();
+prices['Mustang']['Sunday']['3:PM']['SA'][0] =  0;
+prices['Mustang']['Sunday']['3:PM']['SA'][1] =  18;
+prices['Mustang']['Sunday']['3:PM']['SA'][2] =  36;
+prices['Mustang']['Sunday']['3:PM']['SA'][3] =  54;
+prices['Mustang']['Sunday']['3:PM']['SA'][4] =  72;
+prices['Mustang']['Sunday']['3:PM']['SA'][5] =  90;
+prices['Mustang']['Sunday']['3:PM']['SA'][6] =  108;
+prices['Mustang']['Sunday']['3:PM']['SP'] =  new Array();
+prices['Mustang']['Sunday']['3:PM']['SP'][0] =  0;
+prices['Mustang']['Sunday']['3:PM']['SP'][1] =  15;
+prices['Mustang']['Sunday']['3:PM']['SP'][2] =  30;
+prices['Mustang']['Sunday']['3:PM']['SP'][3] =  45;
+prices['Mustang']['Sunday']['3:PM']['SP'][4] =  60;
+prices['Mustang']['Sunday']['3:PM']['SP'][5] =  75;
+prices['Mustang']['Sunday']['3:PM']['SP'][6] =  90;
+prices['Mustang']['Sunday']['3:PM']['SC'] =  new Array();
+prices['Mustang']['Sunday']['3:PM']['SC'][0] =  0;
+prices['Mustang']['Sunday']['3:PM']['SC'][1] =  12;
+prices['Mustang']['Sunday']['3:PM']['SC'][2] =  24;
+prices['Mustang']['Sunday']['3:PM']['SC'][3] =  36;
+prices['Mustang']['Sunday']['3:PM']['SC'][4] =  48;
+prices['Mustang']['Sunday']['3:PM']['SC'][5] =  60;
+prices['Mustang']['Sunday']['3:PM']['SC'][6] =  72;
+prices['Mustang']['Sunday']['3:PM']['FA'] =  new Array();
+prices['Mustang']['Sunday']['3:PM']['FA'][0] =  0;
+prices['Mustang']['Sunday']['3:PM']['FA'][1] =  30;
+prices['Mustang']['Sunday']['3:PM']['FA'][2] =  60;
+prices['Mustang']['Sunday']['3:PM']['FA'][3] =  90;
+prices['Mustang']['Sunday']['3:PM']['FA'][4] =  120;
+prices['Mustang']['Sunday']['3:PM']['FA'][5] =  150;
+prices['Mustang']['Sunday']['3:PM']['FA'][6] =  180;
+prices['Mustang']['Sunday']['3:PM']['FC'] =  new Array();
+prices['Mustang']['Sunday']['3:PM']['FC'][0] =  0;
+prices['Mustang']['Sunday']['3:PM']['FC'][1] =  25;
+prices['Mustang']['Sunday']['3:PM']['FC'][2] =  50;
+prices['Mustang']['Sunday']['3:PM']['FC'][3] =  75;
+prices['Mustang']['Sunday']['3:PM']['FC'][4] =  100;
+prices['Mustang']['Sunday']['3:PM']['FC'][5] =  125;
+prices['Mustang']['Sunday']['3:PM']['FC'][6] =  150;
+prices['Mustang']['Sunday']['3:PM']['BB'] =  new Array();
+prices['Mustang']['Sunday']['3:PM']['BB'][0] =  0;
+prices['Mustang']['Sunday']['3:PM']['BB'][1] =  30;
+prices['Mustang']['Sunday']['3:PM']['BB'][2] =  60;
+prices['Mustang']['Sunday']['3:PM']['BB'][3] =  90;
+prices['Mustang']['Sunday']['3:PM']['BB'][4] =  120;
+prices['Mustang']['Sunday']['3:PM']['BB'][5] =  150;
+prices['Mustang']['Sunday']['3:PM']['BB'][6] =  180;
+
+prices['Ki&ka'] = new Array();
+prices['Ki&ka']['Monday'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM']['SA'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM']['SA'][0] =  0;
+prices['Ki&ka']['Monday']['9:PM']['SA'][1] =  12;
+prices['Ki&ka']['Monday']['9:PM']['SA'][2] =  24;
+prices['Ki&ka']['Monday']['9:PM']['SA'][3] =  36;
+prices['Ki&ka']['Monday']['9:PM']['SA'][4] =  48;
+prices['Ki&ka']['Monday']['9:PM']['SA'][5] =  60;
+prices['Ki&ka']['Monday']['9:PM']['SA'][6] =  72;
+prices['Ki&ka']['Monday']['9:PM']['SP'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM']['SP'][0] =  0;
+prices['Ki&ka']['Monday']['9:PM']['SP'][1] =  10;
+prices['Ki&ka']['Monday']['9:PM']['SP'][2] =  20;
+prices['Ki&ka']['Monday']['9:PM']['SP'][3] =  30;
+prices['Ki&ka']['Monday']['9:PM']['SP'][4] =  40;
+prices['Ki&ka']['Monday']['9:PM']['SP'][5] =  50;
+prices['Ki&ka']['Monday']['9:PM']['SP'][6] =  60;
+prices['Ki&ka']['Monday']['9:PM']['SC'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM']['SC'][0] =  0;
+prices['Ki&ka']['Monday']['9:PM']['SC'][1] =  8;
+prices['Ki&ka']['Monday']['9:PM']['SC'][2] =  16;
+prices['Ki&ka']['Monday']['9:PM']['SC'][3] =  24;
+prices['Ki&ka']['Monday']['9:PM']['SC'][4] =  32;
+prices['Ki&ka']['Monday']['9:PM']['SC'][5] =  40;
+prices['Ki&ka']['Monday']['9:PM']['SC'][6] =  48;
+prices['Ki&ka']['Monday']['9:PM']['FA'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM']['FA'][0] =  0;
+prices['Ki&ka']['Monday']['9:PM']['FA'][1] =  25;
+prices['Ki&ka']['Monday']['9:PM']['FA'][2] =  50;
+prices['Ki&ka']['Monday']['9:PM']['FA'][3] =  75;
+prices['Ki&ka']['Monday']['9:PM']['FA'][4] =  100;
+prices['Ki&ka']['Monday']['9:PM']['FA'][5] =  125;
+prices['Ki&ka']['Monday']['9:PM']['FA'][6] =  150;
+prices['Ki&ka']['Monday']['9:PM']['FC'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM']['FC'][0] =  0;
+prices['Ki&ka']['Monday']['9:PM']['FC'][1] =  20;
+prices['Ki&ka']['Monday']['9:PM']['FC'][2] =  40;
+prices['Ki&ka']['Monday']['9:PM']['FC'][3] =  60;
+prices['Ki&ka']['Monday']['9:PM']['FC'][4] =  80;
+prices['Ki&ka']['Monday']['9:PM']['FC'][5] =  100;
+prices['Ki&ka']['Monday']['9:PM']['FC'][6] =  120;
+prices['Ki&ka']['Monday']['9:PM']['BB'] =  new Array();
+prices['Ki&ka']['Monday']['9:PM']['BB'][0] =  0;
+prices['Ki&ka']['Monday']['9:PM']['BB'][1] =  20;
+prices['Ki&ka']['Monday']['9:PM']['BB'][2] =  40;
+prices['Ki&ka']['Monday']['9:PM']['BB'][3] =  60;
+prices['Ki&ka']['Monday']['9:PM']['BB'][4] =  80;
+prices['Ki&ka']['Monday']['9:PM']['BB'][5] =  100;
+prices['Ki&ka']['Monday']['9:PM']['BB'][6] =  120;
+
+prices['Ki&ka']['Tuesday'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM']['SA'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM']['SA'][0] =  0;
+prices['Ki&ka']['Tuesday']['9:PM']['SA'][1] =  12;
+prices['Ki&ka']['Tuesday']['9:PM']['SA'][2] =  24;
+prices['Ki&ka']['Tuesday']['9:PM']['SA'][3] =  36;
+prices['Ki&ka']['Tuesday']['9:PM']['SA'][4] =  48;
+prices['Ki&ka']['Tuesday']['9:PM']['SA'][5] =  60;
+prices['Ki&ka']['Tuesday']['9:PM']['SA'][6] =  72;
+prices['Ki&ka']['Tuesday']['9:PM']['SP'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM']['SP'][0] =  0;
+prices['Ki&ka']['Tuesday']['9:PM']['SP'][1] =  10;
+prices['Ki&ka']['Tuesday']['9:PM']['SP'][2] =  20;
+prices['Ki&ka']['Tuesday']['9:PM']['SP'][3] =  30;
+prices['Ki&ka']['Tuesday']['9:PM']['SP'][4] =  40;
+prices['Ki&ka']['Tuesday']['9:PM']['SP'][5] =  50;
+prices['Ki&ka']['Tuesday']['9:PM']['SP'][6] =  60;
+prices['Ki&ka']['Tuesday']['9:PM']['SC'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM']['SC'][0] =  0;
+prices['Ki&ka']['Tuesday']['9:PM']['SC'][1] =  8;
+prices['Ki&ka']['Tuesday']['9:PM']['SC'][2] =  16;
+prices['Ki&ka']['Tuesday']['9:PM']['SC'][3] =  24;
+prices['Ki&ka']['Tuesday']['9:PM']['SC'][4] =  32;
+prices['Ki&ka']['Tuesday']['9:PM']['SC'][5] =  40;
+prices['Ki&ka']['Tuesday']['9:PM']['SC'][6] =  48;
+prices['Ki&ka']['Tuesday']['9:PM']['FA'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM']['FA'][0] =  0;
+prices['Ki&ka']['Tuesday']['9:PM']['FA'][1] =  25;
+prices['Ki&ka']['Tuesday']['9:PM']['FA'][2] =  50;
+prices['Ki&ka']['Tuesday']['9:PM']['FA'][3] =  75;
+prices['Ki&ka']['Tuesday']['9:PM']['FA'][4] =  100;
+prices['Ki&ka']['Tuesday']['9:PM']['FA'][5] =  125;
+prices['Ki&ka']['Tuesday']['9:PM']['FA'][6] =  150;
+prices['Ki&ka']['Tuesday']['9:PM']['FC'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM']['FC'][0] =  0;
+prices['Ki&ka']['Tuesday']['9:PM']['FC'][1] =  20;
+prices['Ki&ka']['Tuesday']['9:PM']['FC'][2] =  40;
+prices['Ki&ka']['Tuesday']['9:PM']['FC'][3] =  60;
+prices['Ki&ka']['Tuesday']['9:PM']['FC'][4] =  80;
+prices['Ki&ka']['Tuesday']['9:PM']['FC'][5] =  100;
+prices['Ki&ka']['Tuesday']['9:PM']['FC'][6] =  120;
+prices['Ki&ka']['Tuesday']['9:PM']['BB'] =  new Array();
+prices['Ki&ka']['Tuesday']['9:PM']['BB'][0] =  0;
+prices['Ki&ka']['Tuesday']['9:PM']['BB'][1] =  20;
+prices['Ki&ka']['Tuesday']['9:PM']['BB'][2] =  40;
+prices['Ki&ka']['Tuesday']['9:PM']['BB'][3] =  60;
+prices['Ki&ka']['Tuesday']['9:PM']['BB'][4] =  80;
+prices['Ki&ka']['Tuesday']['9:PM']['BB'][5] =  100;
+prices['Ki&ka']['Tuesday']['9:PM']['BB'][6] =  120;
+
+prices['Ki&ka']['Wednesday'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM']['SA'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM']['SA'][0] =  0;
+prices['Ki&ka']['Wednesday']['1:PM']['SA'][1] =  12;
+prices['Ki&ka']['Wednesday']['1:PM']['SA'][2] =  24;
+prices['Ki&ka']['Wednesday']['1:PM']['SA'][3] =  36;
+prices['Ki&ka']['Wednesday']['1:PM']['SA'][4] =  48;
+prices['Ki&ka']['Wednesday']['1:PM']['SA'][5] =  60;
+prices['Ki&ka']['Wednesday']['1:PM']['SA'][6] =  72;
+prices['Ki&ka']['Wednesday']['1:PM']['SP'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM']['SP'][0] =  0;
+prices['Ki&ka']['Wednesday']['1:PM']['SP'][1] =  10;
+prices['Ki&ka']['Wednesday']['1:PM']['SP'][2] =  20;
+prices['Ki&ka']['Wednesday']['1:PM']['SP'][3] =  30;
+prices['Ki&ka']['Wednesday']['1:PM']['SP'][4] =  40;
+prices['Ki&ka']['Wednesday']['1:PM']['SP'][5] =  50;
+prices['Ki&ka']['Wednesday']['1:PM']['SP'][6] =  60;
+prices['Ki&ka']['Wednesday']['1:PM']['SC'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM']['SC'][0] =  0;
+prices['Ki&ka']['Wednesday']['1:PM']['SC'][1] =  8;
+prices['Ki&ka']['Wednesday']['1:PM']['SC'][2] =  16;
+prices['Ki&ka']['Wednesday']['1:PM']['SC'][3] =  24;
+prices['Ki&ka']['Wednesday']['1:PM']['SC'][4] =  32;
+prices['Ki&ka']['Wednesday']['1:PM']['SC'][5] =  40;
+prices['Ki&ka']['Wednesday']['1:PM']['SC'][6] =  48;
+prices['Ki&ka']['Wednesday']['1:PM']['FA'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM']['FA'][0] =  0;
+prices['Ki&ka']['Wednesday']['1:PM']['FA'][1] =  25;
+prices['Ki&ka']['Wednesday']['1:PM']['FA'][2] =  50;
+prices['Ki&ka']['Wednesday']['1:PM']['FA'][3] =  75;
+prices['Ki&ka']['Wednesday']['1:PM']['FA'][4] =  100;
+prices['Ki&ka']['Wednesday']['1:PM']['FA'][5] =  125;
+prices['Ki&ka']['Wednesday']['1:PM']['FA'][6] =  150;
+prices['Ki&ka']['Wednesday']['1:PM']['FC'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM']['FC'][0] =  0;
+prices['Ki&ka']['Wednesday']['1:PM']['FC'][1] =  20;
+prices['Ki&ka']['Wednesday']['1:PM']['FC'][2] =  40;
+prices['Ki&ka']['Wednesday']['1:PM']['FC'][3] =  60;
+prices['Ki&ka']['Wednesday']['1:PM']['FC'][4] =  80;
+prices['Ki&ka']['Wednesday']['1:PM']['FC'][5] =  100;
+prices['Ki&ka']['Wednesday']['1:PM']['FC'][6] =  120;
+prices['Ki&ka']['Wednesday']['1:PM']['BB'] =  new Array();
+prices['Ki&ka']['Wednesday']['1:PM']['BB'][0] =  0;
+prices['Ki&ka']['Wednesday']['1:PM']['BB'][1] =  20;
+prices['Ki&ka']['Wednesday']['1:PM']['BB'][2] =  40;
+prices['Ki&ka']['Wednesday']['1:PM']['BB'][3] =  60;
+prices['Ki&ka']['Wednesday']['1:PM']['BB'][4] =  80;
+prices['Ki&ka']['Wednesday']['1:PM']['BB'][5] =  100;
+prices['Ki&ka']['Wednesday']['1:PM']['BB'][6] =  120;
+prices['Ki&ka']['Thursday'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM']['SA'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM']['SA'][0] =  0;
+prices['Ki&ka']['Thursday']['1:PM']['SA'][1] =  12;
+prices['Ki&ka']['Thursday']['1:PM']['SA'][2] =  24;
+prices['Ki&ka']['Thursday']['1:PM']['SA'][3] =  36;
+prices['Ki&ka']['Thursday']['1:PM']['SA'][4] =  48;
+prices['Ki&ka']['Thursday']['1:PM']['SA'][5] =  60;
+prices['Ki&ka']['Thursday']['1:PM']['SA'][6] =  72;
+prices['Ki&ka']['Thursday']['1:PM']['SP'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM']['SP'][0] =  0;
+prices['Ki&ka']['Thursday']['1:PM']['SP'][1] =  10;
+prices['Ki&ka']['Thursday']['1:PM']['SP'][2] =  20;
+prices['Ki&ka']['Thursday']['1:PM']['SP'][3] =  30;
+prices['Ki&ka']['Thursday']['1:PM']['SP'][4] =  40;
+prices['Ki&ka']['Thursday']['1:PM']['SP'][5] =  50;
+prices['Ki&ka']['Thursday']['1:PM']['SP'][6] =  60;
+prices['Ki&ka']['Thursday']['1:PM']['SC'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM']['SC'][0] =  0;
+prices['Ki&ka']['Thursday']['1:PM']['SC'][1] =  8;
+prices['Ki&ka']['Thursday']['1:PM']['SC'][2] =  16;
+prices['Ki&ka']['Thursday']['1:PM']['SC'][3] =  24;
+prices['Ki&ka']['Thursday']['1:PM']['SC'][4] =  32;
+prices['Ki&ka']['Thursday']['1:PM']['SC'][5] =  40;
+prices['Ki&ka']['Thursday']['1:PM']['SC'][6] =  48;
+prices['Ki&ka']['Thursday']['1:PM']['FA'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM']['FA'][0] =  0;
+prices['Ki&ka']['Thursday']['1:PM']['FA'][1] =  25;
+prices['Ki&ka']['Thursday']['1:PM']['FA'][2] =  50;
+prices['Ki&ka']['Thursday']['1:PM']['FA'][3] =  75;
+prices['Ki&ka']['Thursday']['1:PM']['FA'][4] =  100;
+prices['Ki&ka']['Thursday']['1:PM']['FA'][5] =  125;
+prices['Ki&ka']['Thursday']['1:PM']['FA'][6] =  150;
+prices['Ki&ka']['Thursday']['1:PM']['FC'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM']['FC'][0] =  0;
+prices['Ki&ka']['Thursday']['1:PM']['FC'][1] =  20;
+prices['Ki&ka']['Thursday']['1:PM']['FC'][2] =  40;
+prices['Ki&ka']['Thursday']['1:PM']['FC'][3] =  60;
+prices['Ki&ka']['Thursday']['1:PM']['FC'][4] =  80;
+prices['Ki&ka']['Thursday']['1:PM']['FC'][5] =  100;
+prices['Ki&ka']['Thursday']['1:PM']['FC'][6] =  120;
+prices['Ki&ka']['Thursday']['1:PM']['BB'] =  new Array();
+prices['Ki&ka']['Thursday']['1:PM']['BB'][0] =  0;
+prices['Ki&ka']['Thursday']['1:PM']['BB'][1] =  20;
+prices['Ki&ka']['Thursday']['1:PM']['BB'][2] =  40;
+prices['Ki&ka']['Thursday']['1:PM']['BB'][3] =  60;
+prices['Ki&ka']['Thursday']['1:PM']['BB'][4] =  80;
+prices['Ki&ka']['Thursday']['1:PM']['BB'][5] =  100;
+prices['Ki&ka']['Thursday']['1:PM']['BB'][6] =  120;
+prices['Ki&ka']['Friday'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM']['SA'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM']['SA'][0] =  0;
+prices['Ki&ka']['Friday']['1:PM']['SA'][1] =  12;
+prices['Ki&ka']['Friday']['1:PM']['SA'][2] =  24;
+prices['Ki&ka']['Friday']['1:PM']['SA'][3] =  36;
+prices['Ki&ka']['Friday']['1:PM']['SA'][4] =  48;
+prices['Ki&ka']['Friday']['1:PM']['SA'][5] =  60;
+prices['Ki&ka']['Friday']['1:PM']['SA'][6] =  72;
+prices['Ki&ka']['Friday']['1:PM']['SP'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM']['SP'][0] =  0;
+prices['Ki&ka']['Friday']['1:PM']['SP'][1] =  10;
+prices['Ki&ka']['Friday']['1:PM']['SP'][2] =  20;
+prices['Ki&ka']['Friday']['1:PM']['SP'][3] =  30;
+prices['Ki&ka']['Friday']['1:PM']['SP'][4] =  40;
+prices['Ki&ka']['Friday']['1:PM']['SP'][5] =  50;
+prices['Ki&ka']['Friday']['1:PM']['SP'][6] =  60;
+prices['Ki&ka']['Friday']['1:PM']['SC'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM']['SC'][0] =  0;
+prices['Ki&ka']['Friday']['1:PM']['SC'][1] =  8;
+prices['Ki&ka']['Friday']['1:PM']['SC'][2] =  16;
+prices['Ki&ka']['Friday']['1:PM']['SC'][3] =  24;
+prices['Ki&ka']['Friday']['1:PM']['SC'][4] =  32;
+prices['Ki&ka']['Friday']['1:PM']['SC'][5] =  40;
+prices['Ki&ka']['Friday']['1:PM']['SC'][6] =  48;
+prices['Ki&ka']['Friday']['1:PM']['FA'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM']['FA'][0] =  0;
+prices['Ki&ka']['Friday']['1:PM']['FA'][1] =  25;
+prices['Ki&ka']['Friday']['1:PM']['FA'][2] =  50;
+prices['Ki&ka']['Friday']['1:PM']['FA'][3] =  75;
+prices['Ki&ka']['Friday']['1:PM']['FA'][4] =  100;
+prices['Ki&ka']['Friday']['1:PM']['FA'][5] =  125;
+prices['Ki&ka']['Friday']['1:PM']['FA'][6] =  150;
+prices['Ki&ka']['Friday']['1:PM']['FC'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM']['FC'][0] =  0;
+prices['Ki&ka']['Friday']['1:PM']['FC'][1] =  20;
+prices['Ki&ka']['Friday']['1:PM']['FC'][2] =  40;
+prices['Ki&ka']['Friday']['1:PM']['FC'][3] =  60;
+prices['Ki&ka']['Friday']['1:PM']['FC'][4] =  80;
+prices['Ki&ka']['Friday']['1:PM']['FC'][5] =  100;
+prices['Ki&ka']['Friday']['1:PM']['FC'][6] =  120;
+prices['Ki&ka']['Friday']['1:PM']['BB'] =  new Array();
+prices['Ki&ka']['Friday']['1:PM']['BB'][0] =  0;
+prices['Ki&ka']['Friday']['1:PM']['BB'][1] =  20;
+prices['Ki&ka']['Friday']['1:PM']['BB'][2] =  40;
+prices['Ki&ka']['Friday']['1:PM']['BB'][3] =  60;
+prices['Ki&ka']['Friday']['1:PM']['BB'][4] =  80;
+prices['Ki&ka']['Friday']['1:PM']['BB'][5] =  100;
+prices['Ki&ka']['Friday']['1:PM']['BB'][6] =  120;
+prices['Ki&ka']['Saturday'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM']['SA'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM']['SA'][0] =  0;
+prices['Ki&ka']['Saturday']['6:PM']['SA'][1] =  18;
+prices['Ki&ka']['Saturday']['6:PM']['SA'][2] =  36;
+prices['Ki&ka']['Saturday']['6:PM']['SA'][3] =  54;
+prices['Ki&ka']['Saturday']['6:PM']['SA'][4] =  72;
+prices['Ki&ka']['Saturday']['6:PM']['SA'][5] =  90;
+prices['Ki&ka']['Saturday']['6:PM']['SA'][6] =  108;
+prices['Ki&ka']['Saturday']['6:PM']['SP'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM']['SP'][0] =  0;
+prices['Ki&ka']['Saturday']['6:PM']['SP'][1] =  15;
+prices['Ki&ka']['Saturday']['6:PM']['SP'][2] =  30;
+prices['Ki&ka']['Saturday']['6:PM']['SP'][3] =  45;
+prices['Ki&ka']['Saturday']['6:PM']['SP'][4] =  60;
+prices['Ki&ka']['Saturday']['6:PM']['SP'][5] =  75;
+prices['Ki&ka']['Saturday']['6:PM']['SP'][6] =  90;
+prices['Ki&ka']['Saturday']['6:PM']['SC'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM']['SC'][0] =  0;
+prices['Ki&ka']['Saturday']['6:PM']['SC'][1] =  12;
+prices['Ki&ka']['Saturday']['6:PM']['SC'][2] =  24;
+prices['Ki&ka']['Saturday']['6:PM']['SC'][3] =  36;
+prices['Ki&ka']['Saturday']['6:PM']['SC'][4] =  48;
+prices['Ki&ka']['Saturday']['6:PM']['SC'][5] =  60;
+prices['Ki&ka']['Saturday']['6:PM']['SC'][6] =  72;
+prices['Ki&ka']['Saturday']['6:PM']['FA'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM']['FA'][0] =  0;
+prices['Ki&ka']['Saturday']['6:PM']['FA'][1] =  30;
+prices['Ki&ka']['Saturday']['6:PM']['FA'][2] =  60;
+prices['Ki&ka']['Saturday']['6:PM']['FA'][3] =  90;
+prices['Ki&ka']['Saturday']['6:PM']['FA'][4] =  120;
+prices['Ki&ka']['Saturday']['6:PM']['FA'][5] =  150;
+prices['Ki&ka']['Saturday']['6:PM']['FA'][6] =  180;
+prices['Ki&ka']['Saturday']['6:PM']['FC'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM']['FC'][0] =  0;
+prices['Ki&ka']['Saturday']['6:PM']['FC'][1] =  25;
+prices['Ki&ka']['Saturday']['6:PM']['FC'][2] =  50;
+prices['Ki&ka']['Saturday']['6:PM']['FC'][3] =  75;
+prices['Ki&ka']['Saturday']['6:PM']['FC'][4] =  100;
+prices['Ki&ka']['Saturday']['6:PM']['FC'][5] =  125;
+prices['Ki&ka']['Saturday']['6:PM']['FC'][6] =  150;
+prices['Ki&ka']['Saturday']['6:PM']['BB'] =  new Array();
+prices['Ki&ka']['Saturday']['6:PM']['BB'][0] =  0;
+prices['Ki&ka']['Saturday']['6:PM']['BB'][1] =  30;
+prices['Ki&ka']['Saturday']['6:PM']['BB'][2] =  60;
+prices['Ki&ka']['Saturday']['6:PM']['BB'][3] =  90;
+prices['Ki&ka']['Saturday']['6:PM']['BB'][4] =  120;
+prices['Ki&ka']['Saturday']['6:PM']['BB'][5] =  150;
+prices['Ki&ka']['Saturday']['6:PM']['BB'][6] =  180;
+prices['Ki&ka']['Sunday'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM']['SA'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM']['SA'][0] =  0;
+prices['Ki&ka']['Sunday']['6:PM']['SA'][1] =  18;
+prices['Ki&ka']['Sunday']['6:PM']['SA'][2] =  36;
+prices['Ki&ka']['Sunday']['6:PM']['SA'][3] =  54;
+prices['Ki&ka']['Sunday']['6:PM']['SA'][4] =  72;
+prices['Ki&ka']['Sunday']['6:PM']['SA'][5] =  90;
+prices['Ki&ka']['Sunday']['6:PM']['SA'][6] =  108;
+prices['Ki&ka']['Sunday']['6:PM']['SP'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM']['SP'][0] =  0;
+prices['Ki&ka']['Sunday']['6:PM']['SP'][1] =  15;
+prices['Ki&ka']['Sunday']['6:PM']['SP'][2] =  30;
+prices['Ki&ka']['Sunday']['6:PM']['SP'][3] =  45;
+prices['Ki&ka']['Sunday']['6:PM']['SP'][4] =  60;
+prices['Ki&ka']['Sunday']['6:PM']['SP'][5] =  75;
+prices['Ki&ka']['Sunday']['6:PM']['SP'][6] =  90;
+prices['Ki&ka']['Sunday']['6:PM']['SC'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM']['SC'][0] =  0;
+prices['Ki&ka']['Sunday']['6:PM']['SC'][1] =  12;
+prices['Ki&ka']['Sunday']['6:PM']['SC'][2] =  24;
+prices['Ki&ka']['Sunday']['6:PM']['SC'][3] =  36;
+prices['Ki&ka']['Sunday']['6:PM']['SC'][4] =  48;
+prices['Ki&ka']['Sunday']['6:PM']['SC'][5] =  60;
+prices['Ki&ka']['Sunday']['6:PM']['SC'][6] =  72;
+prices['Ki&ka']['Sunday']['6:PM']['FA'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM']['FA'][0] =  0;
+prices['Ki&ka']['Sunday']['6:PM']['FA'][1] =  30;
+prices['Ki&ka']['Sunday']['6:PM']['FA'][2] =  60;
+prices['Ki&ka']['Sunday']['6:PM']['FA'][3] =  90;
+prices['Ki&ka']['Sunday']['6:PM']['FA'][4] =  120;
+prices['Ki&ka']['Sunday']['6:PM']['FA'][5] =  150;
+prices['Ki&ka']['Sunday']['6:PM']['FA'][6] =  180;
+prices['Ki&ka']['Sunday']['6:PM']['FC'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM']['FC'][0] =  0;
+prices['Ki&ka']['Sunday']['6:PM']['FC'][1] =  25;
+prices['Ki&ka']['Sunday']['6:PM']['FC'][2] =  50;
+prices['Ki&ka']['Sunday']['6:PM']['FC'][3] =  75;
+prices['Ki&ka']['Sunday']['6:PM']['FC'][4] =  100;
+prices['Ki&ka']['Sunday']['6:PM']['FC'][5] =  125;
+prices['Ki&ka']['Sunday']['6:PM']['FC'][6] =  150;
+prices['Ki&ka']['Sunday']['6:PM']['BB'] =  new Array();
+prices['Ki&ka']['Sunday']['6:PM']['BB'][0] =  0;
+prices['Ki&ka']['Sunday']['6:PM']['BB'][1] =  30;
+prices['Ki&ka']['Sunday']['6:PM']['BB'][2] =  60;
+prices['Ki&ka']['Sunday']['6:PM']['BB'][3] =  90;
+prices['Ki&ka']['Sunday']['6:PM']['BB'][4] =  120;
+prices['Ki&ka']['Sunday']['6:PM']['BB'][5] =  150;
+prices['Ki&ka']['Sunday']['6:PM']['BB'][6] =  180;
+
+
+prices['Grimsby'] = new Array();
+
+prices['Grimsby']['Wednesday'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM']['SA'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM']['SA'][0] =  0;
+prices['Grimsby']['Wednesday']['9:PM']['SA'][1] =  18;
+prices['Grimsby']['Wednesday']['9:PM']['SA'][2] =  36;
+prices['Grimsby']['Wednesday']['9:PM']['SA'][3] =  54;
+prices['Grimsby']['Wednesday']['9:PM']['SA'][4] =  72;
+prices['Grimsby']['Wednesday']['9:PM']['SA'][5] =  90;
+prices['Grimsby']['Wednesday']['9:PM']['SA'][6] =  108;
+prices['Grimsby']['Wednesday']['9:PM']['SP'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM']['SP'][0] =  0;
+prices['Grimsby']['Wednesday']['9:PM']['SP'][1] =  15;
+prices['Grimsby']['Wednesday']['9:PM']['SP'][2] =  30;
+prices['Grimsby']['Wednesday']['9:PM']['SP'][3] =  45;
+prices['Grimsby']['Wednesday']['9:PM']['SP'][4] =  60;
+prices['Grimsby']['Wednesday']['9:PM']['SP'][5] =  75;
+prices['Grimsby']['Wednesday']['9:PM']['SP'][6] =  90;
+prices['Grimsby']['Wednesday']['9:PM']['SC'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM']['SC'][0] =  0;
+prices['Grimsby']['Wednesday']['9:PM']['SC'][1] =  12;
+prices['Grimsby']['Wednesday']['9:PM']['SC'][2] =  24;
+prices['Grimsby']['Wednesday']['9:PM']['SC'][3] =  36;
+prices['Grimsby']['Wednesday']['9:PM']['SC'][4] =  48;
+prices['Grimsby']['Wednesday']['9:PM']['SC'][5] =  60;
+prices['Grimsby']['Wednesday']['9:PM']['SC'][6] =  72;
+prices['Grimsby']['Wednesday']['9:PM']['FA'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM']['FA'][0] =  0;
+prices['Grimsby']['Wednesday']['9:PM']['FA'][1] =  30;
+prices['Grimsby']['Wednesday']['9:PM']['FA'][2] =  60;
+prices['Grimsby']['Wednesday']['9:PM']['FA'][3] =  90;
+prices['Grimsby']['Wednesday']['9:PM']['FA'][4] =  120;
+prices['Grimsby']['Wednesday']['9:PM']['FA'][5] =  150;
+prices['Grimsby']['Wednesday']['9:PM']['FA'][6] =  180;
+prices['Grimsby']['Wednesday']['9:PM']['FC'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM']['FC'][0] =  0;
+prices['Grimsby']['Wednesday']['9:PM']['FC'][1] =  25;
+prices['Grimsby']['Wednesday']['9:PM']['FC'][2] =  50;
+prices['Grimsby']['Wednesday']['9:PM']['FC'][3] =  75;
+prices['Grimsby']['Wednesday']['9:PM']['FC'][4] =  100;
+prices['Grimsby']['Wednesday']['9:PM']['FC'][5] =  125;
+prices['Grimsby']['Wednesday']['9:PM']['FC'][6] =  150;
+prices['Grimsby']['Wednesday']['9:PM']['BB'] =  new Array();
+prices['Grimsby']['Wednesday']['9:PM']['BB'][0] =  0;
+prices['Grimsby']['Wednesday']['9:PM']['BB'][1] =  30;
+prices['Grimsby']['Wednesday']['9:PM']['BB'][2] =  60;
+prices['Grimsby']['Wednesday']['9:PM']['BB'][3] =  90;
+prices['Grimsby']['Wednesday']['9:PM']['BB'][4] =  120;
+prices['Grimsby']['Wednesday']['9:PM']['BB'][5] =  150;
+prices['Grimsby']['Wednesday']['9:PM']['BB'][6] =  180;
+prices['Grimsby']['Thursday'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM']['SA'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM']['SA'][0] =  0;
+prices['Grimsby']['Thursday']['9:PM']['SA'][1] =  18;
+prices['Grimsby']['Thursday']['9:PM']['SA'][2] =  36;
+prices['Grimsby']['Thursday']['9:PM']['SA'][3] =  54;
+prices['Grimsby']['Thursday']['9:PM']['SA'][4] =  72;
+prices['Grimsby']['Thursday']['9:PM']['SA'][5] =  90;
+prices['Grimsby']['Thursday']['9:PM']['SA'][6] =  108;
+prices['Grimsby']['Thursday']['9:PM']['SP'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM']['SP'][0] =  0;
+prices['Grimsby']['Thursday']['9:PM']['SP'][1] =  15;
+prices['Grimsby']['Thursday']['9:PM']['SP'][2] =  30;
+prices['Grimsby']['Thursday']['9:PM']['SP'][3] =  45;
+prices['Grimsby']['Thursday']['9:PM']['SP'][4] =  60;
+prices['Grimsby']['Thursday']['9:PM']['SP'][5] =  75;
+prices['Grimsby']['Thursday']['9:PM']['SP'][6] =  90;
+prices['Grimsby']['Thursday']['9:PM']['SC'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM']['SC'][0] =  0;
+prices['Grimsby']['Thursday']['9:PM']['SC'][1] =  12;
+prices['Grimsby']['Thursday']['9:PM']['SC'][2] =  24;
+prices['Grimsby']['Thursday']['9:PM']['SC'][3] =  36;
+prices['Grimsby']['Thursday']['9:PM']['SC'][4] =  48;
+prices['Grimsby']['Thursday']['9:PM']['SC'][5] =  60;
+prices['Grimsby']['Thursday']['9:PM']['SC'][6] =  72;
+prices['Grimsby']['Thursday']['9:PM']['FA'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM']['FA'][0] =  0;
+prices['Grimsby']['Thursday']['9:PM']['FA'][1] =  30;
+prices['Grimsby']['Thursday']['9:PM']['FA'][2] =  60;
+prices['Grimsby']['Thursday']['9:PM']['FA'][3] =  90;
+prices['Grimsby']['Thursday']['9:PM']['FA'][4] =  120;
+prices['Grimsby']['Thursday']['9:PM']['FA'][5] =  150;
+prices['Grimsby']['Thursday']['9:PM']['FA'][6] =  180;
+prices['Grimsby']['Thursday']['9:PM']['FC'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM']['FC'][0] =  0;
+prices['Grimsby']['Thursday']['9:PM']['FC'][1] =  25;
+prices['Grimsby']['Thursday']['9:PM']['FC'][2] =  50;
+prices['Grimsby']['Thursday']['9:PM']['FC'][3] =  75;
+prices['Grimsby']['Thursday']['9:PM']['FC'][4] =  100;
+prices['Grimsby']['Thursday']['9:PM']['FC'][5] =  125;
+prices['Grimsby']['Thursday']['9:PM']['FC'][6] =  150;
+prices['Grimsby']['Thursday']['9:PM']['BB'] =  new Array();
+prices['Grimsby']['Thursday']['9:PM']['BB'][0] =  0;
+prices['Grimsby']['Thursday']['9:PM']['BB'][1] =  30;
+prices['Grimsby']['Thursday']['9:PM']['BB'][2] =  60;
+prices['Grimsby']['Thursday']['9:PM']['BB'][3] =  90;
+prices['Grimsby']['Thursday']['9:PM']['BB'][4] =  120;
+prices['Grimsby']['Thursday']['9:PM']['BB'][5] =  150;
+prices['Grimsby']['Thursday']['9:PM']['BB'][6] =  180;
+prices['Grimsby']['Friday'] =  new Array();
+prices['Grimsby']['Friday']['9:PM'] =  new Array();
+prices['Grimsby']['Friday']['9:PM']['SA'] =  new Array();
+prices['Grimsby']['Friday']['9:PM']['SA'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['SA'][1] =  18;
+prices['Grimsby']['Friday']['9:PM']['SA'][2] =  36;
+prices['Grimsby']['Friday']['9:PM']['SA'][3] =  54;
+prices['Grimsby']['Friday']['9:PM']['SA'][4] =  72;
+prices['Grimsby']['Friday']['9:PM']['SA'][5] =  90;
+prices['Grimsby']['Friday']['9:PM']['SA'][6] =  108;
+prices['Grimsby']['Friday']['9:PM']['SP'] =  new Array();
+prices['Grimsby']['Friday']['9:PM']['SP'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['SP'][1] =  15;
+prices['Grimsby']['Friday']['9:PM']['SP'][2] =  30;
+prices['Grimsby']['Friday']['9:PM']['SP'][3] =  45;
+prices['Grimsby']['Friday']['9:PM']['SP'][4] =  60;
+prices['Grimsby']['Friday']['9:PM']['SP'][5] =  75;
+prices['Grimsby']['Friday']['9:PM']['SP'][6] =  90;
+prices['Grimsby']['Friday']['9:PM']['SC'] =  new Array();
+prices['Grimsby']['Friday']['9:PM']['FA'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['FC'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['BB'][0] =  0;
+prices['Grimsby']['Saturday']['9:PM']['SA'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['SC'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['SC'][1] =  12;
+prices['Grimsby']['Friday']['9:PM']['SC'][2] =  24;
+prices['Grimsby']['Friday']['9:PM']['SC'][3] =  36;
+prices['Grimsby']['Friday']['9:PM']['SC'][4] =  48;
+prices['Grimsby']['Friday']['9:PM']['SC'][5] =  60;
+prices['Grimsby']['Friday']['9:PM']['SC'][6] =  72;
+prices['Grimsby']['Friday']['9:PM']['FA'] =  new Array();
+prices['Grimsby']['Friday']['9:PM']['FA'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['FA'][1] =  30;
+prices['Grimsby']['Friday']['9:PM']['FA'][2] =  60;
+prices['Grimsby']['Friday']['9:PM']['FA'][3] =  90;
+prices['Grimsby']['Friday']['9:PM']['FA'][4] =  120;
+prices['Grimsby']['Friday']['9:PM']['FA'][5] =  150;
+prices['Grimsby']['Friday']['9:PM']['FA'][6] =  180;
+prices['Grimsby']['Friday']['9:PM']['FC'] =  new Array();
+prices['Grimsby']['Friday']['9:PM']['FC'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['FC'][1] =  25;
+prices['Grimsby']['Friday']['9:PM']['FC'][2] =  50;
+prices['Grimsby']['Friday']['9:PM']['FC'][3] =  75;
+prices['Grimsby']['Friday']['9:PM']['FC'][4] =  100;
+prices['Grimsby']['Friday']['9:PM']['FC'][5] =  125;
+prices['Grimsby']['Friday']['9:PM']['FC'][6] =  150;
+prices['Grimsby']['Friday']['9:PM']['BB'] =  new Array();
+prices['Grimsby']['Friday']['9:PM']['BB'][0] =  0;
+prices['Grimsby']['Friday']['9:PM']['BB'][1] =  30;
+prices['Grimsby']['Friday']['9:PM']['BB'][2] =  60;
+prices['Grimsby']['Friday']['9:PM']['BB'][3] =  90;
+prices['Grimsby']['Friday']['9:PM']['BB'][4] =  120;
+prices['Grimsby']['Friday']['9:PM']['BB'][5] =  150;
+prices['Grimsby']['Friday']['9:PM']['BB'][6] =  180;
+prices['Grimsby']['Saturday'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM']['SA'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM']['SA'][0] =  0;
+prices['Grimsby']['Saturday']['9:PM']['SA'][1] =  18;
+prices['Grimsby']['Saturday']['9:PM']['SA'][2] =  36;
+prices['Grimsby']['Saturday']['9:PM']['SA'][3] =  54;
+prices['Grimsby']['Saturday']['9:PM']['SA'][4] =  72;
+prices['Grimsby']['Saturday']['9:PM']['SA'][5] =  90;
+prices['Grimsby']['Saturday']['9:PM']['SA'][6] =  108;
+prices['Grimsby']['Saturday']['9:PM']['SP'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM']['SP'][0] =  0;
+prices['Grimsby']['Saturday']['9:PM']['SP'][1] =  15;
+prices['Grimsby']['Saturday']['9:PM']['SP'][2] =  30;
+prices['Grimsby']['Saturday']['9:PM']['SP'][3] =  45;
+prices['Grimsby']['Saturday']['9:PM']['SP'][4] =  60;
+prices['Grimsby']['Saturday']['9:PM']['SP'][5] =  75;
+prices['Grimsby']['Saturday']['9:PM']['SP'][6] =  90;
+prices['Grimsby']['Saturday']['9:PM']['SC'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM']['SC'][0] =  0;
+prices['Grimsby']['Saturday']['9:PM']['SC'][1] =  12;
+prices['Grimsby']['Saturday']['9:PM']['SC'][2] =  24;
+prices['Grimsby']['Saturday']['9:PM']['SC'][3] =  36;
+prices['Grimsby']['Saturday']['9:PM']['SC'][4] =  48;
+prices['Grimsby']['Saturday']['9:PM']['SC'][5] =  60;
+prices['Grimsby']['Saturday']['9:PM']['SC'][6] =  72;
+prices['Grimsby']['Saturday']['9:PM']['FA'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM']['FA'][0] =  0;
+prices['Grimsby']['Saturday']['9:PM']['FA'][1] =  30;
+prices['Grimsby']['Saturday']['9:PM']['FA'][2] =  60;
+prices['Grimsby']['Saturday']['9:PM']['FA'][3] =  90;
+prices['Grimsby']['Saturday']['9:PM']['FA'][4] =  120;
+prices['Grimsby']['Saturday']['9:PM']['FA'][5] =  150;
+prices['Grimsby']['Saturday']['9:PM']['FA'][6] =  180;
+prices['Grimsby']['Saturday']['9:PM']['FC'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM']['FC'][0] =  0;
+prices['Grimsby']['Saturday']['9:PM']['FC'][1] =  25;
+prices['Grimsby']['Saturday']['9:PM']['FC'][2] =  50;
+prices['Grimsby']['Saturday']['9:PM']['FC'][3] =  75;
+prices['Grimsby']['Saturday']['9:PM']['FC'][4] =  100;
+prices['Grimsby']['Saturday']['9:PM']['FC'][5] =  125;
+prices['Grimsby']['Saturday']['9:PM']['FC'][6] =  150;
+prices['Grimsby']['Saturday']['9:PM']['BB'] =  new Array();
+prices['Grimsby']['Saturday']['9:PM']['BB'][0] =  0;
+prices['Grimsby']['Saturday']['9:PM']['BB'][1] =  30;
+prices['Grimsby']['Saturday']['9:PM']['BB'][2] =  60;
+prices['Grimsby']['Saturday']['9:PM']['BB'][3] =  90;
+prices['Grimsby']['Saturday']['9:PM']['BB'][4] =  120;
+prices['Grimsby']['Saturday']['9:PM']['BB'][5] =  150;
+prices['Grimsby']['Saturday']['9:PM']['BB'][6] =  180;
+prices['Grimsby']['Sunday'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM']['SA'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM']['SA'][0] =  0;
+prices['Grimsby']['Sunday']['9:PM']['SA'][1] =  18;
+prices['Grimsby']['Sunday']['9:PM']['SA'][2] =  36;
+prices['Grimsby']['Sunday']['9:PM']['SA'][3] =  54;
+prices['Grimsby']['Sunday']['9:PM']['SA'][4] =  72;
+prices['Grimsby']['Sunday']['9:PM']['SA'][5] =  90;
+prices['Grimsby']['Sunday']['9:PM']['SA'][6] =  108;
+prices['Grimsby']['Sunday']['9:PM']['SP'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM']['SP'][0] =  0;
+prices['Grimsby']['Sunday']['9:PM']['SP'][1] =  15;
+prices['Grimsby']['Sunday']['9:PM']['SP'][2] =  30;
+prices['Grimsby']['Sunday']['9:PM']['SP'][3] =  45;
+prices['Grimsby']['Sunday']['9:PM']['SP'][4] =  60;
+prices['Grimsby']['Sunday']['9:PM']['SP'][5] =  75;
+prices['Grimsby']['Sunday']['9:PM']['SP'][6] =  90;
+prices['Grimsby']['Sunday']['9:PM']['SC'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM']['SC'][0] =  0;
+prices['Grimsby']['Sunday']['9:PM']['SC'][1] =  12;
+prices['Grimsby']['Sunday']['9:PM']['SC'][2] =  24;
+prices['Grimsby']['Sunday']['9:PM']['SC'][3] =  36;
+prices['Grimsby']['Sunday']['9:PM']['SC'][4] =  48;
+prices['Grimsby']['Sunday']['9:PM']['SC'][5] =  60;
+prices['Grimsby']['Sunday']['9:PM']['SC'][6] =  72;
+prices['Grimsby']['Sunday']['9:PM']['FA'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM']['FA'][0] =  0;
+prices['Grimsby']['Sunday']['9:PM']['FA'][1] =  30;
+prices['Grimsby']['Sunday']['9:PM']['FA'][2] =  60;
+prices['Grimsby']['Sunday']['9:PM']['FA'][3] =  90;
+prices['Grimsby']['Sunday']['9:PM']['FA'][4] =  120;
+prices['Grimsby']['Sunday']['9:PM']['FA'][5] =  150;
+prices['Grimsby']['Sunday']['9:PM']['FA'][6] =  180;
+prices['Grimsby']['Sunday']['9:PM']['FC'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM']['FC'][0] =  0;
+prices['Grimsby']['Sunday']['9:PM']['FC'][1] =  25;
+prices['Grimsby']['Sunday']['9:PM']['FC'][2] =  50;
+prices['Grimsby']['Sunday']['9:PM']['FC'][3] =  75;
+prices['Grimsby']['Sunday']['9:PM']['FC'][4] =  100;
+prices['Grimsby']['Sunday']['9:PM']['FC'][5] =  125;
+prices['Grimsby']['Sunday']['9:PM']['FC'][6] =  150;
+prices['Grimsby']['Sunday']['9:PM']['BB'] =  new Array();
+prices['Grimsby']['Sunday']['9:PM']['BB'][0] =  0;
+prices['Grimsby']['Sunday']['9:PM']['BB'][1] =  30;
+prices['Grimsby']['Sunday']['9:PM']['BB'][2] =  60;
+prices['Grimsby']['Sunday']['9:PM']['BB'][3] =  90;
+prices['Grimsby']['Sunday']['9:PM']['BB'][4] =  120;
+prices['Grimsby']['Sunday']['9:PM']['BB'][5] =  150;
+prices['Grimsby']['Sunday']['9:PM']['BB'][6] =  180;
+
+
+
+
+
+
+
+function setDays() {
+  movSel = document.getElementById('movie');
+  dayList = days[movSel.value];
+  changeSelect('day', dayList, dayList);
+  setTimes();
+  
+}
+
+function setTimes() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeList = times[movSel.value][daySel.value];
+  changeSelect('time', timeList, timeList);
+  setSeats();
+  setSeats1();
+  setSeats2();
+  setSeats3();
+  setSeats4();
+  setSeats5();
+}
+function setSeats() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatList = seats[movSel.value][daySel.value][timeSel.value];
+  changeSelect('seat', seatList, seatList);
+  setStypes();
+  setPrice();
+}
+
+function setSeats1() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatList = seats[movSel.value][daySel.value][timeSel.value];
+  changeSelect('seat1', seatList, seatList);
+  setStypes1();
+  setPrice1();
+}
+function setSeats2() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatList = seats[movSel.value][daySel.value][timeSel.value];
+  changeSelect('seat2', seatList, seatList);
+  setStypes2();
+  setPrice2();
+}
+
+function setSeats3() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatList = seats[movSel.value][daySel.value][timeSel.value];
+  changeSelect('seat3', seatList, seatList);
+  setStypes3();
+  setPrice3();
+}
+function setSeats4() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatList = seats[movSel.value][daySel.value][timeSel.value];
+  changeSelect('seat4', seatList, seatList);
+  setStypes4();
+  setPrice4();
+}
+function setSeats5() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatList = seats[movSel.value][daySel.value][timeSel.value];
+  changeSelect('seat5', seatList, seatList);
+  setStypes5();
+  setPrice5();
+}
+
+function setStypes() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel = document.getElementById('seat');
+  stypeList = stypes[movSel.value][daySel.value][timeSel.value][seatSel.value];
+  changeSelect('stype', stypeList, stypeList);
+  setPrice();
+  
+}
+
+function setStypes1() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel = document.getElementById('seat1');
+  stypeList = stypes[movSel.value][daySel.value][timeSel.value][seatSel.value];
+  changeSelect('stype1', stypeList, stypeList);
+  
+  setPrice1();
+  
+}
+function setStypes2() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel = document.getElementById('seat2');
+  stypeList = stypes[movSel.value][daySel.value][timeSel.value][seatSel.value];
+  changeSelect('stype2', stypeList, stypeList);
+  
+  setPrice2();
+  
+}
+
+function setStypes3() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel = document.getElementById('seat3');
+  stypeList = stypes[movSel.value][daySel.value][timeSel.value][seatSel.value];
+  changeSelect('stype3', stypeList, stypeList);
+  
+  setPrice3();
+  
+}
+function setStypes4() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel = document.getElementById('seat4');
+  stypeList = stypes[movSel.value][daySel.value][timeSel.value][seatSel.value];
+  changeSelect('stype4', stypeList, stypeList);
+  
+  setPrice4();
+  
+}
+function setStypes5() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel = document.getElementById('seat5');
+  stypeList = stypes[movSel.value][daySel.value][timeSel.value][seatSel.value];
+  changeSelect('stype5', stypeList, stypeList);
+  
+  setPrice5();
+  
+}
+
+function setPrice() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel = document.getElementById('seat');
+  stypeSel = document.getElementById('stype');
+  priceList = prices[movSel.value][daySel.value][timeSel.value][seatSel.value][stypeSel.value];
+  
+}
+
+function setPrice1() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel1 = document.getElementById('seat1');
+  stypeSel1 = document.getElementById('stype1');
+  priceList = prices[movSel.value][daySel.value][timeSel.value][seatSel1.value][stypeSel1.value];
+  
+}
+
+function setPrice2() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel2 = document.getElementById('seat2');
+  stypeSel2 = document.getElementById('stype2');
+  priceList = prices[movSel.value][daySel.value][timeSel.value][seatSel2.value][stypeSel2.value];
+  
+}
+function setPrice3() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel3 = document.getElementById('seat3');
+  stypeSel3= document.getElementById('stype3');
+  priceList = prices[movSel.value][daySel.value][timeSel.value][seatSel3.value][stypeSel3.value];
+  
+}
+function setPrice4() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel4 = document.getElementById('seat4');
+  stypeSel4= document.getElementById('stype4');
+  priceList = prices[movSel.value][daySel.value][timeSel.value][seatSel4.value][stypeSel4.value];
+  
+}
+function setPrice5() {
+  movSel = document.getElementById('movie');
+  daySel = document.getElementById('day');
+  timeSel = document.getElementById('time');
+  seatSel5 = document.getElementById('seat5');
+  stypeSel5= document.getElementById('stype5');
+  priceList = prices[movSel.value][daySel.value][timeSel.value][seatSel5.value][stypeSel5.value];
+  
+}
+function cTotal()
+{
+      movSel = document.getElementById('movie');
+     daySel = document.getElementById('day');
+     timeSel = document.getElementById('time');
+     seatSel = document.getElementById('seat');
+     stypeSel = document.getElementById('stype');
+     seatSel1 = document.getElementById('seat1');
+     stypeSel1 = document.getElementById('stype1');
+     seatSel2 = document.getElementById('seat2');
+     stypeSel2 = document.getElementById('stype2');
+     seatSel3 = document.getElementById('seat3');
+     stypeSel3= document.getElementById('stype3');
+     seatSel4 = document.getElementById('seat4');
+     stypeSel4= document.getElementById('stype4');
+     seatSel5 = document.getElementById('seat5');
+     stypeSel5= document.getElementById('stype5');
+     ttp6 = prices[movSel.value][daySel.value][timeSel.value][seatSel5.value][stypeSel5.value];
+     ttp5 = prices[movSel.value][daySel.value][timeSel.value][seatSel4.value][stypeSel4.value];
+     ttp4 = prices[movSel.value][daySel.value][timeSel.value][seatSel3.value][stypeSel3.value];
+     ttp3 = prices[movSel.value][daySel.value][timeSel.value][seatSel2.value][stypeSel2.value];
+     ttp2 = prices[movSel.value][daySel.value][timeSel.value][seatSel1.value][stypeSel1.value];
+     ttp1 = prices[movSel.value][daySel.value][timeSel.value][seatSel.value][stypeSel.value];
+     ttp=ttp1+ttp2+ttp3+ttp4+ttp5+ttp6;
+    var divobj = document.getElementById('totalPrice');  
+    divobj.value = ttp;
+    var divobj = document.getElementById('price1'); 
+    divobj.innerHTML = ttp1;
+    var divobj = document.getElementById('price2');   
+    divobj.innerHTML = ttp2;
+    var divobj = document.getElementById('price3');   
+    divobj.innerHTML = ttp3;
+    var divobj = document.getElementById('price4');   
+    divobj.innerHTML = ttp4;
+    var divobj = document.getElementById('price5');   
+    divobj.innerHTML = ttp5;
+    var divobj = document.getElementById('price6');   
+    divobj.innerHTML = ttp6;
+
+
+}
+
+function cTotal0()
+{
+     
+     tp=0.00;
+     tp1=0.00;
+     tp2=0.00;
+     tp3=0.00;
+     tp4=0.00;
+     tp5=0.00;
+     tp6=0.00;
+    var divobj = document.getElementById('totalPrice');  
+    divobj.value = tp;
+    var divobj = document.getElementById('price1'); 
+    divobj.innerHTML = tp1;
+    var divobj = document.getElementById('price2');   
+    divobj.innerHTML = tp2;
+    var divobj = document.getElementById('price3');   
+    divobj.innerHTML = tp3;
+    var divobj = document.getElementById('price4');   
+    divobj.innerHTML = tp4;
+    var divobj = document.getElementById('price5');   
+    divobj.innerHTML = tp5;
+    var divobj = document.getElementById('price6');   
+    divobj.innerHTML = tp6;
+
+
+}
+
+function changeSelect(fieldID, newOptions, newValues) {
+  selectField = document.getElementById(fieldID);
+  selectField.options.length = 0;
+  for (i=0; i<newOptions.length; i++) {
+    selectField.options[selectField.length] = new Option(newOptions[i], newValues[i]);
+  }
+}
+
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+
+addLoadEvent(function() {
+  setDays();
+ 
+
+  
+});
+
+
+
+</script>
+</head>
+<body>
+<fieldset>
+<legend><strong>Make your selection</strong></legend>
+
+<form name="test" method="POST" action="get.php">
+Movie:
+<select name="movie" id="movie" onchange="setDays();cTotal0();">
+  <option value=""></option>
+  <option value="Zootopia">Zootopia</option>
+  <option value="Mustang">Mustang</option>
+  <option value="Ki&ka">Ki&Ka</option>
+  <option value="Grimsby">Grimsby</option>
+</select>
+Day:
+<select name="day" id="day" onchange="setTimes();cTotal0();">
+  <option value=""></option>
+</select>
+Time:
+<select name="time"  id="time" onchange="setSeats();setSeats1();setSeats2();setSeats3();setSeats4();setSeats5()">
+  <option value=""></option>
+</select>
+<table>
+<tr>
+   <th>Seat</th>
+   <th>Quantity</th>
+   <th>Subtotal price</th>
+ </tr>
+<tr>
+<td>
+<select name="seat"  id="seat" onchange="setStypes();setPrice();cTotal()">
+  <option value=""></option>
+</select></td>
+<td>
+
+<select name="stype"  id="stype" onchange="setPrice();cTotal()" >
+  <option value=""></option>
+</select></td>
+
+
+<td><p id="price1"></p></td>
+
+</tr>
+<tr>
+<td>
+<select name="seat1"  id="seat1" onchange="setStypes1();setPrice1();cTotal()">
+  <option value=""></option>
+</select></td>
+<td><select name="stype1"  id="stype1" onchange="setPrice1();cTotal()" >
+  <option value=""></option>
+</select></td>
+<td><p id="price2"></p></td>
+</tr>
+
+<tr>
+<td>
+<select name="seat2"  id="seat2" onchange="setStypes2();setPrice2();cTotal()">
+  <option value=""></option>
+</select></td>
+<td><select name="stype2"  id="stype2" onchange="setPrice2();cTotal()" >
+  <option value=""></option>
+</select></td>
+<td><p id="price3"></p></td>
+</tr>
+<tr>
+<td>
+<select name="seat3"  id="seat3" onchange="setStypes3();setPrice3();cTotal()">
+  <option value=""></option>
+</select></td>
+<td><select name="stype3"  id="stype3" onchange="setPrice3();cTotal()" >
+  <option value=""></option>
+</select></td>
+<td><p id="price4"></p></td>
+</tr>
+<tr>
+<td>
+<select name="seat4"  id="seat4" onchange="setStypes4();setPrice4();cTotal()">
+  <option value=""></option>
+</select></td>
+<td><select name="stype4"  id="stype4" onchange="setPrice4();cTotal()" >
+  <option value=""></option>
+</select></td>
+<td><p id="price5"></p></td>
+</tr>
+<tr>
+<td>
+<select name="seat5"  id="seat5" onchange="setStypes5();setPrice5();cTotal()">
+  <option value=""></option>
+</select></td>
+<td><select name="stype45"  id="stype5" onchange="setPrice5();cTotal()" >
+  <option value=""></option>
+</select></td>
+<td><p id="price6"></p></td>
+</tr>
+<tr>
+<td colspan="2">Total amount(AUD)</td>
+<td ><p id="totalPrice"></p></td>
+</tr>
+
+</table>
+<input type="submit">
+</form>
+
+</fieldset>
+</body>
+</html>

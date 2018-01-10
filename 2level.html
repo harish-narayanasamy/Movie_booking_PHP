@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+<FORM NAME="FORM2">
+
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="3">
+<TR>
+	<TH>Make</TH><TH>Model</TH><TH>Type</TH>
+</TR>
+<TR>
+	<TD VALGN="top">
+	<SELECT NAME="MAKE" MULTIPLE SIZE=5>
+		<OPTION VALUE="Honda">Honda
+		<OPTION VALUE="Ford" SELECTED>Ford
+		<OPTION VALUE="Toyota">Toyota
+	</SELECT>
+	</TD>
+	<TD VALIGN="top">
+	<SELECT NAME="MODEL" MULTIPLE SIZE=5>
+	<SCRIPT LANGUAGE="JavaScript">makeModel.printOptions("MODEL")</SCRIPT>
+	</SELECT>
+	</TD>
+	<TD VALIGN="top">
+	<SELECT NAME="TYPE" MULTIPLE>
+	<SCRIPT LANGUAGE="JavaScript">makeModel.printOptions("TYPE")</SCRIPT>
+	</SELECT>
+	</TD>
+</TR>
+<TR>
+	<TH>Make2</TH><TH>Model2</TH><TH>Type2</TH>
+</TR>
+<TR>
+	<TD VALIGN="top">
+	<SELECT NAME="MAKE2"  SIZE=5>
+	<OPTION VALUE="Honda" SELECTED>Honda
+	<OPTION VALUE="Ford">Ford
+	<OPTION VALUE="Toyota">Toyota
+	</SELECT>
+	</TD>
+	<TD VALIGN="top">
+	<SELECT NAME="MODEL2"  SIZE=5>
+	<SCRIPT LANGUAGE="JavaScript">makeModel.printOptions("MODEL2")</SCRIPT>
+	</SELECT>
+	</TD>
+	<TD VALIGN="top">
+	<SELECT NAME="TYPE2"  SIZE=5>
+	<SCRIPT LANGUAGE="JavaScript">makeModel.printOptions("TYPE2")</SCRIPT>
+	</SELECT>
+	</TD>
+</TR>
+<TR>
+	<TD COLSPAN="3" ALIGN="center">
+	<input type="button" value="Reset This Form" onClick="this.form.reset(); resetDynamicOptionLists(this.form);">
+	</TD>
+</TR>
+</TABLE>
+</FORM>
+
+ 
+
+ 
+<SCRIPT ID="example3">
+var makeModel = new DynamicOptionList("MAKE","MODEL","TYPE");
+makeModel.addDependentFields("MAKE2","MODEL2","TYPE2");
+
+makeModel.forValue("Ford").addOptions("Fiesta","Focus","Taurus"); // Add options if VALUE of option is selected
+makeModel.forText("Honda").addOptions("Civic","Accord","Prelude"); // Add these options if TEXT of option is selected
+
+makeModel.forValue("Ford").setDefaultOptions("Fiesta");
+makeModel.forText("Honda").setDefaultOptions("Accord");
+makeModel.forValue("Ford").forValue("Taurus").addOptions("2-door","4-door");
+
+makeModel.forField("MODEL").setValues("Focus","Taurus");
+makeModel.forField("TYPE").setValues("2-door");
+makeModel.forField("MODEL2").setValues("Civic","Prelude");
+
+makeModel.forValue("Toyota").addOptionsTextValue("Camry","10-CAMRY","Corolla","20-COROLLA","Celica","30-CELICA"); // Add options with values different from text
+
+</SCRIPT>
+
+</body>
+</html>

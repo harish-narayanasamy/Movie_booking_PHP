@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Header</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+	<link rel="stylesheet" href="header.css">
+</head>
+<body>
+	<div class="mobile-display" >
+		<h2 class="site-title">
+			<a href="#">
+				<img src="http://i.imgsafe.org/cb0d96e.png" alt="smashtheshell" >
+			</a>
+		</h2>
+	</div>
+	<header>
+		<nav>
+			<a href="#" class="toggle-menu">&#9776;</a>
+			<ul class="nav-list nav-open" id="nav">
+				<li><a href="#">Contact</a></li>
+				<li class="has-submenu"><a href="#">Portfolio</a>
+					<ul>
+						<li><a href="#">Web Designing</a></li>
+						<li><a href="#">Web Development</a></li>
+						<li><a href="#">UI Designing</a></li>
+						<li><a href="#">Back End Development</a></li>
+						<li><a href="#">Front End Development</a></li>
+					</ul>
+				</li>
+				<li class="has-logo"><a href="#">
+					<h2 class="site-title">
+						<img src="http://i.imgsafe.org/cb0d96e.png" alt="smashtheshell">
+					</h2>
+				</a></li>
+				<li class="has-submenu"><a href="#">Services</a>
+					<ul>
+						<li><a href="#">Web Development</a></li>
+						<li><a href="#">Web Design</a></li>
+						<li><a href="#">UI Designing</a></li>
+						<li><a href="#">Back End Development</a></li>
+						<li><a href="#">Front End Development</a></li>
+					</ul>
+				</li>
+				<li><a href="#">About</a></li>
+			</ul>
+		</nav>
+	</header>	
+	
+
+<main>
+	<section>
+		<h1>Post 1 : Creating Header with Logo in Middle of Navigation Menu </h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic beatae qui, est perspiciatis ducimus delectus pariatur nisi enim similique earum tempora aut, unde, quod. Iusto quod mollitia, in aspernatur non ratione voluptas vero sit veniam sunt quibusdam doloremque et harum soluta hic placeat ab excepturi nesciunt animi rerum enim officiis blanditiis porro itaque. Doloremque, voluptates consectetur quis soluta assumenda, temporibus sequi aliquid. Porro delectus accusantium dicta officiis cupiditate reiciendis praesentium quam explicabo animi necessitatibus blanditiis maxime molestiae, ullam aliquam ea, inventore temporibus nihil eum tempore minus architecto rerum aut. Nulla eos laboriosam, minus earum alias, repellat tempore facilis iusto quibusdam deleniti assumenda magnam dolore doloribus saepe maiores. Expedita enim ea, maiores beatae odit, eaque officia ut vitae! Nihil nisi non ullam. Officiis nihil, repellendus dolorem reiciendis eius enim aperiam qui omnis, rerum voluptatum itaque fuga dignissimos nobis dolor explicabo perspiciatis necessitatibus, asperiores? Eveniet doloribus itaque optio perspiciatis iure, qui minima libero dicta suscipit ducimus, id rerum consequuntur autem reprehenderit corporis! Beatae obcaecati aut, impedit aliquid provident harum aspernatur, pariatur ea ipsa explicabo nulla earum dicta dolore nisi, molestiae optio modi. Totam beatae assumenda iusto, eveniet consectetur consequuntur repudiandae esse eos maxime, eligendi, tenetur incidunt odit nemo ducimus quidem eaque repellat.</p>
+	</section>
+</main>
+<footer>&copy; 2015 | Smashtheshell</footer>
+<script   src="https://code.jquery.com/jquery-1.11.3.min.js"   integrity="sha256-7LkWEzqTdpEfELxcZZlS6wAx5Ff13zZ83lYO2/ujj7g="   crossorigin="anonymous"></script>	
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		var ulNav= "#nav", openNav = "active";	
+
+		$('.toggle-menu').click(function(e){
+
+				if($(ulNav).hasClass(openNav)){
+					$(ulNav).removeClass(openNav);
+				}else{
+					$(ulNav).addClass(openNav);
+				}
+				e.preventDefault();
+		})			
+	})
+</script>
+
+
+</body>
+</html>

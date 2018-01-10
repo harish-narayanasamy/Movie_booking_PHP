@@ -1,0 +1,38 @@
+<html>
+<head></head>
+<body onload="myFunction()">
+<form name="TESTING" action="http://titan.csit.rmit.edu.au/~e54061/wp/testbooking.php" id="bookform" method="post";">
+<form name="TESTING">
+<table border="1" width="600" height="200" cellpadding="10" cellspacing="3">
+<tr><th colspan="2"><h1>TESTING</h1></th></tr>
+<tr>  <th><h3>INPUT</h3></th>
+<th><h3>OUTPUT</h3></th>    </tr>
+<tr></tr>
+<td><input type="number" name="INPUT1" id="input" onchange="calculate();"/></td>
+<td><input type="number" name="OUTPUT1" id="output" readonly></td>
+</table>
+
+</form>
+
+<script type="text/javascript">
+function calculate() {
+
+var USERINPUT1 = document.TESTING.INPUT1.value;
+var CALC1 = USERINPUT1/20;
+var CALC2 = CALC1*.585;
+var CALC3 = CALC2*.30;
+document.TESTING.OUTPUT1.value = CALC3;
+
+}
+
+</script>
+
+<script>
+function myFunction() {
+    document.getElementById("input").value = "788889";
+document.getElementById("output").defaultValue = "0.00";
+}
+</script>
+
+</body>
+</html>

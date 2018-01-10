@@ -1,0 +1,51 @@
+Name:Harish Narayanasamy 
+Email:nharish19@outlook.com 
+Mobile:0449660378 
+Movie:Ki&ka 
+Day:Monday 
+Time:9:PM 
+Seat Type:SC 
+Quantity:1 
+Price: $8.00 
+Total Price: $8.00 
+Grand Total  Price: $8 
+Movie:Ki&ka 
+Day:Monday 
+Time:9:PM 
+Seat Type:SP 
+Quantity:3 
+Price: $30.00 
+Total Price: $30.00 
+Movie:Mustang 
+Day:Monday 
+Time:6:PM 
+Seat Type:SP 
+Quantity:1 
+Price: $10.00 
+Total Price: $10.00 
+Grand Total  Price: $40 
+Movie:Ki&ka 
+Day:Monday 
+Time:9:PM 
+Seat Type:SC 
+Quantity:2 
+Price: $16.00 
+Total Price: $16.00 
+Grand Total  Price: $16 
+Seat Type:SA 
+Quantity:3 
+Price: $54.00 
+Total Price: $54.00 
+Seat Type:SP 
+Quantity:1 
+Price: $10.00 
+Total Price: $10.00 
+Grand Total  Price: $64 
+Movie:Ki&ka 
+Day:Monday 
+Time:9:PM 
+Seat Type:SP 
+Quantity:2 
+Price: $20.00 
+Total Price: $20.00 
+Grand Total  Price: $20 
